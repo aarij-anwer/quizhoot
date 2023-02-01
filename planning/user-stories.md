@@ -20,10 +20,16 @@
 - Right answer needs to be identified 
 - A sharing link is given once creation completed
 
+![quiz creation step1](https://github.com/aarij-anwer/quizhoot/blob/master/planning/wireframes/New%20quiz%20-%20step%201.png)
+![quiz creation step2](https://github.com/aarij-anwer/quizhoot/blob/master/planning/wireframes/New%20quiz%20-%20step%202.png)
+![quiz creation step3](https://github.com/aarij-anwer/quizhoot/blob/master/planning/wireframes/New%20quiz%20-%20step%203.png)
 
 ### users can see all public quiz on homepage
 - All quizzes include a title, description, random image, call to action (open link)
 - If the user wants to access a quiz and is not logged in, redirect to login prompt
+
+![home - Logged in](https://github.com/aarij-anwer/quizhoot/blob/master/planning/wireframes/Home%20logged%20in.png)
+![home - Not logged in](https://github.com/aarij-anwer/quizhoot/blob/master/planning/wireframes/Home%20non%20logged-in.png)
 
 
 ### users can complete a quiz
@@ -33,17 +39,27 @@
 - Share their score page from a link
 - User can give another to a quiz once completed
 
+![Quiz page - Logged in](https://github.com/aarij-anwer/quizhoot/blob/master/planning/wireframes/Quiz%20page%20-%20Logged%20in.png)
+![Quiz page - Not logged in](https://github.com/aarij-anwer/quizhoot/blob/master/planning/wireframes/Quiz%20page%20-%20Not%20logged%20in.png)
+![Result page](https://github.com/aarij-anwer/quizhoot/blob/master/planning/wireframes/Resut%20page.png)
+
 ### users can login
 - Enter user and password in a form
 - Display user info once logged in
 - Log out button display
 
+![Login page](https://github.com/aarij-anwer/quizhoot/blob/master/planning/wireframes/Login.png)
+
 ### users can sign up
 - Fill a form
+
+![Sign up page](https://github.com/aarij-anwer/quizhoot/blob/master/planning/wireframes/Sign%20up.png)
 
 ### users can see their quizzes once logged in
 - My quizzes page accessible once logged in
 - List all user private and public quizzes with the sharing link (call to action)
+
+![My quizzes page](https://github.com/aarij-anwer/quizhoot/blob/master/planning/wireframes/My%20quizzes.png)
 
 
 ////////////////////////////////////////////////////////////////
