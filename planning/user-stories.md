@@ -50,6 +50,9 @@
  
  ## Extras
 
+ ### Completion rate display on quiz page
+ - When users are filling a survey, a jauge display their completion rate
+ 
  ### My profile page
  - Users can see their quizzes attempt, scores, stats...
 
@@ -58,6 +61,9 @@
  - Number of attempts, stats...
 
  ### Feature to edit the survey 
+ - users can return in an existing survey from their quizzes page and update questions/answers
+
+
 
 
 
