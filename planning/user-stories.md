@@ -9,44 +9,61 @@
 - users can see the results of their recent attempt
 - users can share a link to the result of their attempt
 
-## Questions to answer:
-- Do we want to set up a feature to edit the survey?
-- Set up a profile page that has a chart with their recent attempts and quizes they own?
-- Should users be able to take a quiz multiple times? If so, should we show the correct results or just show their attempt?
-- Should we set a min/max for how many questions they can ask?
+////////////////////////////////////////////////////////////////
+## MVP
 
 ### users can create quizzes
-- User must be logged in to create a quiz, and if they are not registered they must create an account. 
-- User can put whatever they want for questions and answers
-- min/max for how many questions they can have. 
+- Needs to be logged in
+- Quizzes have: Title, description, privacy, questions, link
+- Always 3 possible answers (text input)
+- Maximum 10 questions
+- Right answer needs to be identified 
+- A sharing link is given once creation completed
 
-### users can make their quiz unlisted (make them private and not available on the home page, but if someone knows the quiz URL they can visit and take the quiz)
-- users must be logged in to change the status of visibility, and if they are not the owner, it alerts that they cannot change it. 
+
+### users can see all public quiz on homepage
+- All quizzes include a title, description, random image, call to action (open link)
+- If the user wants to access a quiz and is not logged in, redirect to login prompt
 
 
-### users can share a link to a single quiz
-- have to be logged in to view and take the quiz
-- if the user does not have an account it prompts them to register for one. 
-- Once logged in the user can view the quiz and attempt it. 
+### users can complete a quiz
+- User needs to be logged in, if not will be prompt a redirection page (redirection to quiz once logged in)
+- Needs to answer all questions
+- Get their score
+- Share their score page from a link
+- User can give another to a quiz once completed
 
-### users can see a list of public quizzes
-- don't have to be logged in to view the overall list, but to go into one they need to be logged in.
+### users can login
+- Enter user and password in a form
+- Display user info once logged in
+- Log out button display
 
-### users can see a list of public quizzes on the home page
-- when users are not logged in they see the public quizzes but can not accces the single quizzes
-- when users are logged in, they see the home page with the public quizzes and can open them if they click on a specific quiz and it opens to a single quiz page. 
+### users can sign up
+- Fill a form
 
-### users can attempt a quiz
-- user needs to be logged in to take a quiz
-- if they are not logged in user will be prompted to login 
-- can navigate to a public quiz (or private if they own it) and view/attempt the quiz 
+### users can see their quizzes once logged in
+- My quizzes page accessible once logged in
+- List all user private and public quizzes with the sharing link (call to action)
 
-### users can see the results of their recent attempt
-- users don't need to be logged in to view the results page
-- users can see the quiz attempt, who attempted it, the correct answers, and their score. 
 
-### users can share a link to the result of their attempt
-- users don't have to be logged in to view the results page. 
-- user can view, but cannot take the quiz without logging in. 
+////////////////////////////////////////////////////////////////
+ 
+ ## Extras
+
+ ### My profile page
+ - Users can see their quizzes attempt, scores, stats...
+
+ ### Enhance result page
+ - Adding correct and wrong answers
+ - Number of attempts, stats...
+
+ ### Feature to edit the survey 
+
+
+
+
+
+
+
 
 
