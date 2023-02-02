@@ -7,5 +7,5 @@ CREATE TABLE questions (
   option_1 VARCHAR(255) NOT NULL,
   option_2 VARCHAR(255) NOT NULL,
   option_3 VARCHAR(255) NOT NULL,
-  correct_answer BOOLEAN NOT NULL
+  correct_answer VARCHAR(255) NOT NULL
 );
