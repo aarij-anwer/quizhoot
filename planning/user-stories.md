@@ -67,7 +67,7 @@
  ## Extras
 
  ### Completion rate display on quiz page
- - When users are filling a survey, a jauge display their completion rate
+ - When users are filling a survey, a gauge display their completion rate
  
  ### My profile page
  - Users can see their quizzes attempt, scores, stats...
