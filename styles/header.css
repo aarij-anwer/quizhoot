@@ -1,0 +1,12 @@
+.nav-container {
+  display: flex;
+  flex-direction: column;
+  padding-top: 40px;
+  max-width: 100%;
+  background-color: #fff;
+  color: #000;
+}
+
+.nav-container span {
+  text-align: left;
+}/*# sourceMappingURL=header.css.map */
