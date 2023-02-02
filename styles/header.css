@@ -1,6 +1,9 @@
 .nav-container {
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  padding: 25px;
   padding-top: 40px;
   max-width: 100%;
   background-color: #fff;
@@ -9,4 +12,16 @@
 
 .nav-container span {
   text-align: left;
+  color: #000;
+  padding: 15px;
+  font-weight: 600;
+  font-size: 25px;
+}
+
+.nav-container button {
+  text-align: left;
+  background-color: #63099c;
+  color: #fff;
+  padding: 15px;
+  font-weight: 600;
 }/*# sourceMappingURL=header.css.map */

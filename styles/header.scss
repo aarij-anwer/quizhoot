@@ -1,12 +1,16 @@
 $backgroundColour: #fff;
 $textColour: #000;
+$bold: 600;
+$buttonColour: #63099c;
+$buttonTextColour: #fff;
 
 .nav-container {
   display: flex;
-  flex-direction: column;
-  // align-items: center;
-  // justify-content: center;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
   // text-align: center;
+  padding: 25px;
   padding-top: 40px;
   max-width: 100%;
   // height: 520px;
@@ -17,4 +21,16 @@ $textColour: #000;
 
 .nav-container span {
   text-align: left;
+  color: $textColour;
+  padding: 15px;
+  font-weight: $bold;
+  font-size: 25px;
+}
+
+.nav-container button {
+  text-align: left;
+  background-color: $buttonColour;
+  color: $buttonTextColour;
+  padding: 15px;
+  font-weight: $bold;
 }
