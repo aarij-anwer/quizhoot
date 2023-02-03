@@ -6,5 +6,5 @@ CREATE TABLE quizzes (
   title VARCHAR(255) NOT NULL,
   description TEXT NOT NULL,
   public BOOLEAN NOT NULL,
-  Total_questions INTEGER
+  total_questions INTEGER
 );
