@@ -1,3 +1,4 @@
+/* eslint-disable camelcase */
 /*
  * All routes for Users are defined here
  * Since this file is loaded in server.js into /users,
@@ -10,6 +11,10 @@ const router  = express.Router();
 
 router.get('/', (req, res) => {
   res.render('users');
-}); 
+});
+
+
+
+
 
 module.exports = router;
