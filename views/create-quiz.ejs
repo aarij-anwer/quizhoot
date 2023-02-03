@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>Create a quiz</title>
+
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- Fonts -->
+  <script src="https://kit.fontawesome.com/2bfd122b18.js" crossorigin="anonymous"></script>
+
+  <link rel="stylesheet" href="/vendor/normalize-4.1.1.css" />
+  <link rel="stylesheet" href="/vendor/border-box.css" />
+  <link rel="stylesheet" href="/styles/main.css" />
+  <link rel="stylesheet" href="/styles/layout.css" />
+  <link rel="stylesheet" href="/styles/header.css" />
+
+
+  <script src="/vendor/jquery-3.0.0.js"></script>
+  <script defer src="/scripts/app.js"></script>
+</head>
+
+<body>
+  <%- include('partials/_header') %>
+    <main>
+      <h1>Create a quiz</h1>
+      <form action ="/quizzes" method="POST" id="new-quiz-form" class="new-quiz-form">
+        <div class="steps_navigation">
+          <link>Enter information</link>
+          <link>Add questions</link>
+          <link>Share with friends</link>
+        </div>
+        <br><br>
+        <div class="step_1">
+          <label>Quiz title</label>
+          <input type="text" id="title" name="title" placeholder="Enter a title">
+          <br><br>
+          <label>Description</label>
+          <input type="text" id="description" name="description" placeholder="Enter a description">
+          <br><br>
+          <label>Privacy</label>
+          <br><br>
+          <input type="radio" id="public" name="public" value="0">
+          <label for="private">Private</label><br>
+          <input type="radio" id="public" name="public" value="1">
+          <label for="public">Public</label><br>
+          <br><br>
+          <hr>
+          <br><br>
+          <button type="button">Next step</button>
+        </div>
+        <br><br>
+
+        <div class="step_2">
+          <label>Question</label>
+          <input type="text" id="question" name="question_text" placeholder="Enter a question">
+          <br><br>
+          <label>First answer</label>
+          <input type="text" name="option_1" placeholder="Enter an answer choice">
+          <input type="radio" id="radio_1" name="correct_answer" value="1">
+          <label for="radio_1">Correct answer</label>
+          <br><br>
+          <label>Second answer</label>
+          <input type="text" name="option_2" placeholder="Enter an answer choice">
+          <input type="radio" id="radio_2" name="correct_answer" value="2">
+          <label for="radio_2">Correct answer</label>
+          <br><br>
+          <label>Third answer</label>
+          <input type="text" name="option_3" placeholder="Enter an answer choice">
+          <input type="radio" id="radio_3" name="correct_answer" value="3">
+          <label for="radio_3">Correct answer</label>
+          <br><br>
+          <button type="button">Add a question</button>
+          <br><br>
+          <hr>
+          <br><br>
+          <button type="submit">Submit</button>
+          <br><br>
+        </div>
+        <br><br>
+
+        <div class="step_3">
+          <label>Share with your friends</label>
+          <br><br>
+          <label>URL to replace by dynamic link</label>
+          <button class="btn"><i class="fa-regular fa-copy"></i></button>
+          <br><br>
+          <button type="button">See all your quizzes</button>
+          <br><br>
+      </form>
+    </main>
+</body>
+
+</html>
