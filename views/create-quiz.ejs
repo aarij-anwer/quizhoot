@@ -16,6 +16,7 @@
   <link rel="stylesheet" href="/styles/main.css" />
   <link rel="stylesheet" href="/styles/layout.css" />
   <link rel="stylesheet" href="/styles/header.css" />
+  <link rel="stylesheet" href="/styles/quiz-form.css" />
 
 
   <script src="/vendor/jquery-3.0.0.js"></script>
@@ -26,13 +27,13 @@
   <%- include('partials/_header') %>
     <main>
       <h1>Create a quiz</h1>
-      <form action ="/quizzes" method="POST" id="new-quiz-form" class="new-quiz-form">
-        <div class="steps_navigation">
-          <link>Enter information</link>
-          <link>Add questions</link>
-          <link>Share with friends</link>
-        </div>
+      <div class="steps_navigation">
+        <link>Enter information</link>
+        <link>Add questions</link>
+        <link>Share with friends</link>
         <br><br>
+      </div>
+      <form action ="/quizzes" method="POST" id="new-quiz-form" class="new-quiz-form">
         <div class="step_1">
           <label>Quiz title</label>
           <input type="text" id="title" name="title" placeholder="Enter a title">
@@ -42,10 +43,12 @@
           <br><br>
           <label>Privacy</label>
           <br><br>
-          <input type="radio" id="public" name="public" value="0">
-          <label for="private">Private</label><br>
-          <input type="radio" id="public" name="public" value="1">
-          <label for="public">Public</label><br>
+          <div class="privacy">
+            <input type="radio" id="public" name="public" value="0">
+            <label for="private">Private</label><br>
+            <input type="radio" id="public" name="public" value="1">
+            <label for="public">Public</label><br>
+          </div>
           <br><br>
           <hr>
           <br><br>

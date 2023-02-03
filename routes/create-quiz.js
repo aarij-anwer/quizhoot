@@ -3,7 +3,6 @@ const express = require('express');
 const db = require('../db/queries/database');
 const router  = express.Router();
 
-
 router.get('/new', (req, res) => {
   res.render('create-quiz');
 });
@@ -14,10 +13,9 @@ router.post('/', (req, res) => {
   // const userId = req.session.userId;
   db.createNewQuiz({...req.body, owner_id : 1})
     .then(quiz => {
-console.log(quiz);
+      console.log(quiz);
       db.addQuestion({...req.body, quiz_id : quiz.id})
         .then(question => {
-
           res.redirect('/');
         })
         .catch(e => {

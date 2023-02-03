@@ -1,0 +1,26 @@
+.new-quiz-form {
+  display: flex;
+  flex-direction: column;
+  padding: 30px;
+  background-color: #fff;
+  width: 80%;
+}
+
+.step_1 {
+  display: flex;
+  flex-direction: column;
+}
+
+.privacy {
+  display: flex;
+  flex-direction: row;
+  padding-right: 30px;
+}
+
+.step_2 {
+  display: none;
+}
+
+.step_3 {
+  display: none;
+}/*# sourceMappingURL=quiz-form.css.map */

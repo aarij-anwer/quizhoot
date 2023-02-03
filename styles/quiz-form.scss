@@ -1,0 +1,38 @@
+$backgroundColour: #fff;
+$textColour: #000;
+$bold: 600;
+$buttonColour: #63099c;
+$buttonTextColour: #fff;
+
+.new-quiz-form {
+  display: flex;
+  flex-direction: column;
+  padding: 30px;
+
+  background-color: $backgroundColour;
+
+  width: 80%;
+}
+
+.step_1 {
+  display: flex;
+  flex-direction: column;
+}
+
+.privacy {
+  display: flex;
+  flex-direction: row;
+  padding-right: 30px;
+
+}
+
+
+
+.step_2 {
+  display: none;
+}
+
+.step_3 {
+  display: none;
+}
+
