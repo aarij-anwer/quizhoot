@@ -2,6 +2,7 @@ $backgroundColour: #fff;
 $textColour: #000;
 $bold: 600;
 $buttonColour: #63099c;
+$buttonColour-hover: #814fa0;
 $buttonTextColour: #fff;
 
 .steps_navigation {
@@ -52,6 +53,16 @@ $buttonTextColour: #fff;
   flex-direction: column;
 }
 
+.step_2 {
+  display: none;
+  flex-direction: column;
+}
+
+.step_3 {
+  display: none;
+  flex-direction: column;
+}
+
 .privacy {
   display: flex;
   flex-direction: row;
@@ -60,10 +71,9 @@ $buttonTextColour: #fff;
 }
 
 .secondary-button {
-  background-color: #EA4C89;
+  background-color: #4a444490;
   border-radius: 8px;
   border-style: none;
-  // box-sizing: border-box;
   color: #FFFFFF;
   cursor: pointer;
   display: inline-block;
@@ -89,22 +99,59 @@ $buttonTextColour: #fff;
 
 .secondary-button:hover,
 .secondary-button:focus {
-  background-color: #F082AC;
+  background-color: #a79eb38a;
+}
+
+.primary-button {
+  background-color: $buttonColour;
+  border-radius: 8px;
+  border-style: none;
+  color: #FFFFFF;
+  cursor: pointer;
+  display: inline-block;
+  font-family: "Haas Grot Text R Web", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 14px;
+  font-weight: 500;
+  height: 40px;
+  width: fit-content;
+  line-height: 20px;
+  list-style: none;
+  margin: 0;
+  outline: none;
+  padding: 10px 16px;
+  position: rigth;
+  text-align: center;
+  text-decoration: none;
+  transition: color 100ms;
+  vertical-align: baseline;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+}
+
+.primary-button:hover,
+.primary-button:focus {
+  background-color: $buttonColour-hover;
 }
 
 .hr {
-  border: 1px solid red;
+  border: 1px solid #63099c;
   margin-left: 0;
   margin-right: 0;
 }
 
-.step_2 {
-  display: none;
+.radio-answer {
+  padding-top: 20px;
 }
 
-.step_3 {
-  display: none;
+.share-link {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  max-width: 40%;
 }
+
 
 
 

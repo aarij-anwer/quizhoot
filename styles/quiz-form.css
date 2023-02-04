@@ -46,6 +46,16 @@
   flex-direction: column;
 }
 
+.step_2 {
+  display: none;
+  flex-direction: column;
+}
+
+.step_3 {
+  display: none;
+  flex-direction: column;
+}
+
 .privacy {
   display: flex;
   flex-direction: row;
@@ -54,7 +64,7 @@
 }
 
 .secondary-button {
-  background-color: #EA4C89;
+  background-color: rgba(74, 68, 68, 0.5647058824);
   border-radius: 8px;
   border-style: none;
   color: #FFFFFF;
@@ -86,19 +96,59 @@
 
 .secondary-button:hover,
 .secondary-button:focus {
-  background-color: #F082AC;
+  background-color: rgba(167, 158, 179, 0.5411764706);
+}
+
+.primary-button {
+  background-color: #63099c;
+  border-radius: 8px;
+  border-style: none;
+  color: #FFFFFF;
+  cursor: pointer;
+  display: inline-block;
+  font-family: "Haas Grot Text R Web", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 14px;
+  font-weight: 500;
+  height: 40px;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  line-height: 20px;
+  list-style: none;
+  margin: 0;
+  outline: none;
+  padding: 10px 16px;
+  position: rigth;
+  text-align: center;
+  text-decoration: none;
+  transition: color 100ms;
+  vertical-align: baseline;
+  -moz-user-select: none;
+   -ms-user-select: none;
+       user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+}
+
+.primary-button:hover,
+.primary-button:focus {
+  background-color: #814fa0;
 }
 
 .hr {
-  border: 1px solid red;
+  border: 1px solid #63099c;
   margin-left: 0;
   margin-right: 0;
 }
 
-.step_2 {
-  display: none;
+.radio-answer {
+  padding-top: 20px;
 }
 
-.step_3 {
-  display: none;
+.share-link {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  max-width: 40%;
 }/*# sourceMappingURL=quiz-form.css.map */
