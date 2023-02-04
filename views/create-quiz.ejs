@@ -21,6 +21,7 @@
 
   <script src="/vendor/jquery-3.0.0.js"></script>
   <script defer src="/scripts/app.js"></script>
+  <script defer src="/scripts/quiz-form.js"></script>
 </head>
 
 <body>
@@ -36,7 +37,7 @@
       <form action ="/quizzes" method="POST" id="new-quiz-form" class="new-quiz-form">
         <div class="step_1">
           <label class="form-label">Quiz title</label>
-          <input class="input-text" type="text" id="title" name="title" placeholder="Enter a title">
+          <input class="input-text" type="text" id="title" name="title" placeholder="Enter a title" required>
           <br><br>
           <label class="form-label">Description</label>
           <textarea
@@ -44,23 +45,24 @@
             type="text"
             id="description"
             name="description"
-            placeholder="Enter a description"></textarea>
+            placeholder="Enter a description" required></textarea>
           <br><br>
           <label class="form-label">Privacy</label>
           <div class="privacy">
             <div>
-              <input type="radio" id="public" name="public" value="0">
-              <label for="private">Private</label>
+              <input type="radio" id="public" name="public" value="1" checked="checked">
+              <label for="public">Public</label><br>
+
             </div>
             <div>
-              <input type="radio" id="public" name="public" value="1">
-              <label for="public">Public</label><br>
+              <input type="radio" id="public" name="public" value="0">
+              <label for="private">Private</label>
             </div>
           </div>
           <br><br>
           <hr class="hr">
           <br><br>
-          <button class="secondary-button" type="button">Add questions</button>
+          <button class="secondary-button" id="btn-add-questions" type="button">Add questions</button>
         </div>
 
         <div class="step_2">
@@ -70,7 +72,7 @@
           <label class="form-label">First answer</label>
           <input class="input-text" type="text" name="option_1" placeholder="Enter an answer choice">
           <div class="radio-answer">
-            <input type="radio" id="radio_1" name="correct_answer" value="1">
+            <input type="radio" id="radio_1" name="correct_answer" value="1" checked="checked">
             <label for="radio_1">Correct answer</label>
           </div>
           <br><br>
