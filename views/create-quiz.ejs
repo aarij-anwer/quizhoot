@@ -28,31 +28,39 @@
     <main>
       <h1>Create a quiz</h1>
       <div class="steps_navigation">
-        <link>Enter information</link>
-        <link>Add questions</link>
-        <link>Share with friends</link>
-        <br><br>
+        <button type="menu" class="step_link">Enter information</button>
+        <button type="menu" class="step_link">Add questions</button>
+        <button type="menu" class="step_link">Share with friends</button>
       </div>
+      <br><br>
       <form action ="/quizzes" method="POST" id="new-quiz-form" class="new-quiz-form">
         <div class="step_1">
-          <label>Quiz title</label>
-          <input type="text" id="title" name="title" placeholder="Enter a title">
+          <label class="form-label">Quiz title</label>
+          <input class="input-text" type="text" id="title" name="title" placeholder="Enter a title">
           <br><br>
-          <label>Description</label>
-          <input type="text" id="description" name="description" placeholder="Enter a description">
+          <label class="form-label">Description</label>
+          <textarea
+            class="input-area"
+            type="text"
+            id="description"
+            name="description"
+            placeholder="Enter a description"></textarea>
           <br><br>
-          <label>Privacy</label>
-          <br><br>
+          <label class="form-label">Privacy</label>
           <div class="privacy">
-            <input type="radio" id="public" name="public" value="0">
-            <label for="private">Private</label><br>
-            <input type="radio" id="public" name="public" value="1">
-            <label for="public">Public</label><br>
+            <div>
+              <input type="radio" id="public" name="public" value="0">
+              <label for="private">Private</label>
+            </div>
+            <div>
+              <input type="radio" id="public" name="public" value="1">
+              <label for="public">Public</label><br>
+            </div>
           </div>
           <br><br>
-          <hr>
+          <hr class="hr">
           <br><br>
-          <button type="button">Next step</button>
+          <button class="secondary-button" type="button">Add questions</button>
         </div>
         <br><br>
 

@@ -1,9 +1,44 @@
+.steps_navigation {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  width: 50%;
+}
+
+.step_link {
+  background-color: transparent;
+  background-repeat: no-repeat;
+  border: none;
+  cursor: pointer;
+  overflow: hidden;
+  outline: none;
+}
+
 .new-quiz-form {
   display: flex;
   flex-direction: column;
-  padding: 30px;
+  padding: 50px 30px;
   background-color: #fff;
-  width: 80%;
+  width: 50%;
+  border-radius: 4px;
+}
+
+.form-label {
+  padding-bottom: 20px;
+}
+
+.input-text {
+  height: 45px;
+  padding: 15px;
+  border-radius: 4px;
+  border-width: 1px;
+}
+
+.input-area {
+  padding: 15px;
+  border-radius: 4px;
+  border-width: 1px;
 }
 
 .step_1 {
@@ -14,7 +49,50 @@
 .privacy {
   display: flex;
   flex-direction: row;
-  padding-right: 30px;
+  justify-content: space-between;
+  max-width: 35%;
+}
+
+.secondary-button {
+  background-color: #EA4C89;
+  border-radius: 8px;
+  border-style: none;
+  color: #FFFFFF;
+  cursor: pointer;
+  display: inline-block;
+  font-family: "Haas Grot Text R Web", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 14px;
+  font-weight: 500;
+  height: 40px;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  line-height: 20px;
+  list-style: none;
+  margin: 0;
+  outline: none;
+  padding: 10px 16px;
+  position: rigth;
+  text-align: center;
+  text-decoration: none;
+  transition: color 100ms;
+  vertical-align: baseline;
+  -moz-user-select: none;
+   -ms-user-select: none;
+       user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+}
+
+.secondary-button:hover,
+.secondary-button:focus {
+  background-color: #F082AC;
+}
+
+.hr {
+  border: 1px solid red;
+  margin-left: 0;
+  margin-right: 0;
 }
 
 .step_2 {
