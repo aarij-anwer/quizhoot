@@ -4,6 +4,7 @@ const db = require('../db/queries/database');
 const router  = express.Router();
 
 
+/// view all quizzes
 router.get('/home', (req, res) => {
   db.getAllQuizzes(10)
     .then(data => {
@@ -23,8 +24,6 @@ router.get('/home', (req, res) => {
 router.get('/new', (req, res) => {
   res.render('create-quiz');
 });
-
-
 
 
 router.post('/', (req, res) => {

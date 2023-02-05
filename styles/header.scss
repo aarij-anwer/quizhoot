@@ -34,3 +34,7 @@ $buttonTextColour: #fff;
   padding: 15px;
   font-weight: $bold;
 }
+
+.nav-container button a{
+  color: $buttonTextColour;
+}
