@@ -21,7 +21,17 @@ const addQuestion = function(question) {
     });
 };
 
-module.exports = { createNewQuiz, addQuestion };
+const getAllQuizzes = function(limit) {
+  return db.query(
+    `SELECT *
+    FROM quizzes
+    LIMIT $1;`, [limit])
+    .then((response) => {
+      return response.rows;
+    });
+};
+
+module.exports = { createNewQuiz, addQuestion, getAllQuizzes };
 // CREATE TABLE quizzes (
 //   id SERIAL PRIMARY KEY NOT NULL,
 //   owner_id INTEGER REFERENCES users(id),
