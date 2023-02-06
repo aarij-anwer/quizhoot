@@ -31,7 +31,19 @@ const getAllQuizzes = function() {
     });
 };
 
-module.exports = { createNewQuiz, addQuestion, getAllQuizzes };
+const getQuizQuestionsById = function(id) {
+  return db.query(
+    `SELECT quizzes.id AS quizID, quizzes.title, quizzes.description, questions.*
+    FROM quizzes
+    JOIN questions ON quizzes.id = quiz_id
+    WHERE quizzes.id = $1
+    GROUP BY quizzes.id, questions.id;`, [id])
+    .then((response) => {
+      return response.rows;
+    });
+};
+
+module.exports = { createNewQuiz, addQuestion, getAllQuizzes, getQuizQuestionsById };
 // CREATE TABLE quizzes (
 //   id SERIAL PRIMARY KEY NOT NULL,
 //   owner_id INTEGER REFERENCES users(id),

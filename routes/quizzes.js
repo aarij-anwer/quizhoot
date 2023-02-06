@@ -4,7 +4,7 @@ const db = require('../db/queries/database');
 const router  = express.Router();
 
 
-/// view all quizzes
+/// view all quizzes \\\
 router.get('/home', (req, res) => {
   db.getAllQuizzes(10)
     .then(data => {
@@ -19,8 +19,24 @@ router.get('/home', (req, res) => {
     });
 });
 
+/// view and attempt a single quiz\\\
+router.get('/quiz/:quiz_id', (req, res) => {
+  const quizId = req.params.quiz_id;
+  db.getQuizQuestionsById(quizId)
+    .then(data => {
+      console.log('data', data);
+      const templateVars = {
+        quizzes: data
+      };
+      res.render('view-quiz', templateVars);
+    })
+    .catch(e => {
+      console.error(e);
+      res.send(e);
+    });
+});
 
-//// Create a quiz
+//// Create a quiz \\\\
 router.get('/new', (req, res) => {
   res.render('create-quiz');
 });
