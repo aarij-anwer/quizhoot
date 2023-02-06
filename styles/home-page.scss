@@ -1,0 +1,14 @@
+@import 'variables';
+
+.card {
+width: 700px;
+}
+
+.card-body {
+padding: 15px;
+background-color: $lightGrey;
+}
+
+.card-body h3 {
+  text-align: left;
+}

@@ -10,12 +10,9 @@
   color: #000;
 }
 
-.nav-container span {
-  text-align: left;
-  color: #000;
-  padding: 15px;
-  font-weight: 600;
-  font-size: 25px;
+.logo-img {
+  height: 100px;
+  padding: 5px;
 }
 
 .nav-container button {
@@ -24,4 +21,8 @@
   color: #fff;
   padding: 15px;
   font-weight: 600;
+}
+
+.nav-container button a {
+  color: #fff;
 }/*# sourceMappingURL=header.css.map */

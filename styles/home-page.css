@@ -1,0 +1,12 @@
+.card {
+  width: 700px;
+}
+
+.card-body {
+  padding: 15px;
+  background-color: #cad2c5;
+}
+
+.card-body h3 {
+  text-align: left;
+}/*# sourceMappingURL=home-page.css.map */

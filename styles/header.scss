@@ -1,8 +1,4 @@
-$backgroundColour: #fff;
-$textColour: #000;
-$bold: 600;
-$buttonColour: #63099c;
-$buttonTextColour: #fff;
+@import 'variables';
 
 .nav-container {
   display: flex;
@@ -16,15 +12,11 @@ $buttonTextColour: #fff;
   // height: 520px;
   background-color: $backgroundColour;
   color: $textColour;
-  // background-image: url("https://www.transparenttextures.com/patterns/asfalt-light.png");
 }
 
-.nav-container span {
-  text-align: left;
-  color: $textColour;
-  padding: 15px;
-  font-weight: $bold;
-  font-size: 25px;
+.logo-img {
+  height: 100px;
+  padding: 5px;
 }
 
 .nav-container button {
@@ -33,4 +25,8 @@ $buttonTextColour: #fff;
   color: $buttonTextColour;
   padding: 15px;
   font-weight: $bold;
+}
+
+.nav-container button a{
+  color: $buttonTextColour;
 }
