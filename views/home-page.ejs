@@ -11,6 +11,7 @@
   <link rel="stylesheet" href="/styles/main.css" />
   <link rel="stylesheet" href="/styles/layout.css" />
   <link rel="stylesheet" href="/styles/header.css" />
+  <link rel="stylesheet" href="/styles/footer.css" />
   <link rel="stylesheet" href="/styles/home-page.css" />
 
 
@@ -24,23 +25,6 @@
   <main>
     <h1>Quizzes</h1>
 
-
-
-        <div class="card-deck">
-          <% for (let quiz of quizzes) { %>
-        <div class="card">
-          <div class="card-body">
-            <h5 class="card-title"><%= quiz.title %></h5>
-            <p class="card-text"><%= quiz.description %></p>
-            <a href="#" class="btn btn-primary">Go somewhere</a>
-        </div>
-      </div>
-          <% } %>
-        </div>
-
-
-
-
     <% for (let quiz of quizzes) { %>
     <div class="card">
       <div class="card-body">
@@ -51,6 +35,7 @@
     </div>
     <% } %>
   </main>
+  <%- include('partials/_footer') %>
 </body>
 </html>
 
