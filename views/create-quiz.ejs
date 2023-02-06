@@ -28,16 +28,15 @@
   <%- include('partials/_header') %>
     <main>
       <h1>Create a quiz</h1>
-      <div class="steps_navigation">
-        <button type="menu" class="step_link">Enter information</button>
-        <button type="menu" class="step_link">Add questions</button>
-        <button type="menu" class="step_link">Share with friends</button>
-      </div>
       <br><br>
       <form action ="/quizzes" method="POST" id="new-quiz-form" class="new-quiz-form">
         <div class="step_1">
           <label class="form-label">Quiz title</label>
-          <input class="input-text" type="text" id="title" name="title" placeholder="Enter a title" required>
+          <input class="input-text"
+                 type="text"
+                 id="title"
+                 name="title"
+                 placeholder="Enter a title">
           <br><br>
           <label class="form-label">Description</label>
           <textarea
@@ -45,7 +44,7 @@
             type="text"
             id="description"
             name="description"
-            placeholder="Enter a description" required></textarea>
+            placeholder="Enter a description"></textarea>
           <br><br>
           <label class="form-label">Privacy</label>
           <div class="privacy">
@@ -62,35 +61,67 @@
           <br><br>
           <hr class="hr">
           <br><br>
-          <button class="secondary-button" id="btn-add-questions" type="button">Add questions</button>
+          <button class="secondary-button"
+                  id="btn-add-questions"
+                  type="button">Add questions</button>
         </div>
 
         <div class="step_2">
-          <label class="form-label">Question</label>
-          <input class="input-text" type="text" id="question" name="question_text" placeholder="Enter a question">
-          <br><br>
-          <label class="form-label">First answer</label>
-          <input class="input-text" type="text" name="option_1" placeholder="Enter an answer choice">
-          <div class="radio-answer">
-            <input type="radio" id="radio_1" name="correct_answer" value="1" checked="checked">
-            <label for="radio_1">Correct answer</label>
+          <button class="secondary-button"
+                  id="btn-back"
+                  type="button">Back to quiz info</button>
+          <div class="question">
+            <label class="form-label">Question</label>
+            <input class="input-text"
+                   type="text"
+                   id="question"
+                   name="question_text"
+                   placeholder="Enter a question">
+            <br><br>
+            <label class="form-label">First answer</label>
+            <input class="input-text"
+                   type="text"
+                   name="option_1"
+                   placeholder="Enter an answer choice">
+            <div class="radio-answer">
+              <input type="checkbox"
+                     id="radio_1"
+                     name="correct_answer"
+                     value="1"
+                     checked="checked">
+              <label for="radio_1">Correct answer</label>
+            </div>
+            <br><br>
+            <label class="form-label">Second answer</label>
+            <input class="input-text"
+                   type="text"
+                   name="option_2"
+                   placeholder="Enter an answer choice">
+            <div class="radio-answer">
+              <input type="checkbox"
+                     id="radio_2"
+                     name="correct_answer"
+                     value="2">
+              <label for="radio_2">Correct answer</label>
+            </div>
+            <br><br>
+            <label class="form-label">Third answer</label>
+            <input class="input-text"
+                   type="text"
+                   name="option_3"
+                   placeholder="Enter an answer choice">
+            <div class="radio-answer">
+              <input type="checkbox"
+                     id="radio_3"
+                     name="correct_answer"
+                     value="3">
+              <label for="radio_3">Correct answer</label>
+            </div>
           </div>
-          <br><br>
-          <label class="form-label">Second answer</label>
-          <input class="input-text" type="text" name="option_2" placeholder="Enter an answer choice">
-          <div class="radio-answer">
-            <input type="radio" id="radio_2" name="correct_answer" value="2">
-            <label for="radio_2">Correct answer</label>
-          </div>
-          <br><br>
-          <label class="form-label">Third answer</label>
-          <input class="input-text" type="text" name="option_3" placeholder="Enter an answer choice">
-          <div class="radio-answer">
-            <input type="radio" id="radio_3" name="correct_answer" value="3">
-            <label for="radio_3">Correct answer</label>
-          </div>
-          <br><br>
-          <button class="secondary-button" type="button">Add a question</button>
+          <div class="questions-container"></div>
+          <button class="secondary-button"
+                  id="btn-add-question"
+                  type="button">Add a question</button>
           <br><br>
           <hr class="hr">
           <br><br>

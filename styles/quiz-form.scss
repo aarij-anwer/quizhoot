@@ -5,23 +5,6 @@ $buttonColour: #63099c;
 $buttonColour-hover: #814fa0;
 $buttonTextColour: #fff;
 
-.steps_navigation {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: space-between;
-  width: 50%;
-}
-
-.step_link {
-  background-color: transparent;
-  background-repeat: no-repeat;
-  border: none;
-  cursor: pointer;
-  overflow: hidden;
-  outline: none;
-}
-
 .new-quiz-form {
   display: flex;
   flex-direction: column;
@@ -29,6 +12,20 @@ $buttonTextColour: #fff;
   background-color: $backgroundColour;
   width: 50%;
   border-radius: 4px;
+}
+
+.question {
+  display: flex;
+  flex-direction: column;
+  padding: 50px 30px;
+}
+
+.question-header {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+
 }
 
 .form-label {
