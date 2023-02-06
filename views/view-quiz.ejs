@@ -13,7 +13,7 @@
   <link rel="stylesheet" href="/styles/layout.css" />
   <link rel="stylesheet" href="/styles/header.css" />
   <link rel="stylesheet" href="/styles/footer.css" />
-  <link rel="stylesheet" href="/styles/home-page.css" />
+  <link rel="stylesheet" href="/styles/view-a-quiz.css" />
 
 
   <script src="/vendor/jquery-3.0.0.js"></script>
@@ -25,29 +25,40 @@
   <%- include('partials/_header') %>
 
     <main>
-      <h1>Look at this quiz</h1>
+      <h1><%= quizzes[0].title %></h1>
+      <p><%= quizzes[0].description %></p>
+
 
       <% for (let quiz of quizzes) { %>
-      <% console.log('quiz', quiz); %>
+        <% console.log('quiz', quiz); %>
 
-      <Ul Class="Quiz">
-        <Li>
-          <H4><%= quiz.question_text %></H4>
-          <Ul Class="Choices">
+          <Ul class="quiz">
             <Li>
-              <Label><Input Type="Radio" Name="<%= quiz.id %>" Value="option_1" /><Span><%= quiz.option_1 %></Span></Label>
-            </Li>
-            <Li>
-              <Label><Input Type="Radio" Name="<%= quiz.id %>" Value="option_2" /><Span><%= quiz.option_2 %></Span></Label>
-            </Li>
-            <Li>
-              <Label><Input Type="Radio" Name="<%= quiz.id %>" Value="option_3" /><Span><%= quiz.option_3 %></Span></Label>
+              <H4>
+                <%= quiz.question_text %>
+              </H4>
+              <Ul class="choices">
+                <Li>
+                  <Label><Input Type="Radio" Name="<%= quiz.id %>" Value="option_1" /><Span>
+                      <%= quiz.option_1 %>
+                    </Span></Label>
+                </Li>
+                <Li>
+                  <Label><Input Type="Radio" Name="<%= quiz.id %>" Value="option_2" /><Span>
+                      <%= quiz.option_2 %>
+                    </Span></Label>
+                </Li>
+                <Li>
+                  <Label><Input Type="Radio" Name="<%= quiz.id %>" Value="option_3" /><Span>
+                      <%= quiz.option_3 %>
+                    </Span></Label>
+                </Li>
+              </Ul>
             </Li>
           </Ul>
-        </Li>
-      </Ul>
-
           <% } %>
+
+            <Button Class="View-Results" Onclick="ReturnScore()">Submit</Button>
     </main>
     <%- include('partials/_footer') %>
 </body>

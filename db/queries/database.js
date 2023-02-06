@@ -42,8 +42,24 @@ const getQuizQuestionsById = function(id) {
       return response.rows;
     });
 };
+const getQuizTitle = function(id) {
+  return db.query(
+    `SELECT title
+    FROM quizzes
+    WHERE id = $1;`, [id])
+    .then((response) => {
+      console.log('query test', response.rows[0]);
+      let obj = response.rows[0];
+      let title = '';
+      for (const key in obj) {
+        title = obj[key];
+      }
+      // return response.rows[0];
+      return title;
+    });
+};
 
-module.exports = { createNewQuiz, addQuestion, getAllQuizzes, getQuizQuestionsById };
+module.exports = { createNewQuiz, addQuestion, getAllQuizzes, getQuizQuestionsById, getQuizTitle };
 // CREATE TABLE quizzes (
 //   id SERIAL PRIMARY KEY NOT NULL,
 //   owner_id INTEGER REFERENCES users(id),

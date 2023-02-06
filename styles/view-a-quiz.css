@@ -1,0 +1,17 @@
+.quiz {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: left;
+  text-align: left;
+  align-content: flex-start;
+  width: 700px;
+}
+
+.quiz, .choices {
+  list-style-type: none;
+}
+
+.choices li {
+  padding-top: 3px;
+}/*# sourceMappingURL=view-a-quiz.css.map */
