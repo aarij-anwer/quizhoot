@@ -21,11 +21,11 @@ const addQuestion = function(question) {
     });
 };
 
-const getAllQuizzes = function(limit) {
+const getAllQuizzes = function() {
   return db.query(
-    `SELECT *
+    `SELECT id, title, description
     FROM quizzes
-    LIMIT $1;`, [limit])
+    WHERE public = true;`)
     .then((response) => {
       return response.rows;
     });
