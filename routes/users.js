@@ -9,15 +9,15 @@
 const express = require('express');
 const router  = express.Router();
 
-router.get('/', (req, res) => {
-  res.render('users');
+router.post('/', (req, res) => {
+  console.log("Post request");
+  res.redirect('/quizzes/home');
 });
 
-router.get('/users/new', (req, res) => {
-
+//user registration
+router.get('/new', (req, res) => {
+  console.log("User registration");
+  res.render('register');
 });
-
-
-
 
 module.exports = router;
