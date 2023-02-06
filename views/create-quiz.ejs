@@ -16,78 +16,128 @@
   <link rel="stylesheet" href="/styles/main.css" />
   <link rel="stylesheet" href="/styles/layout.css" />
   <link rel="stylesheet" href="/styles/header.css" />
+  <link rel="stylesheet" href="/styles/quiz-form.css" />
 
 
   <script src="/vendor/jquery-3.0.0.js"></script>
   <script defer src="/scripts/app.js"></script>
+  <script defer src="/scripts/quiz-form.js"></script>
 </head>
 
 <body>
   <%- include('partials/_header') %>
     <main>
       <h1>Create a quiz</h1>
+      <br><br>
       <form action ="/quizzes" method="POST" id="new-quiz-form" class="new-quiz-form">
-        <div class="steps_navigation">
-          <link>Enter information</link>
-          <link>Add questions</link>
-          <link>Share with friends</link>
-        </div>
-        <br><br>
         <div class="step_1">
-          <label>Quiz title</label>
-          <input type="text" id="title" name="title" placeholder="Enter a title">
+          <label class="form-label">Quiz title</label>
+          <input class="input-text"
+                 type="text"
+                 id="title"
+                 name="title"
+                 placeholder="Enter a title">
           <br><br>
-          <label>Description</label>
-          <input type="text" id="description" name="description" placeholder="Enter a description">
+          <label class="form-label">Description</label>
+          <textarea
+            class="input-area"
+            type="text"
+            id="description"
+            name="description"
+            placeholder="Enter a description"></textarea>
           <br><br>
-          <label>Privacy</label>
+          <label class="form-label">Privacy</label>
+          <div class="privacy">
+            <div>
+              <input type="radio" id="public" name="public" value="1" checked="checked">
+              <label for="public">Public</label><br>
+
+            </div>
+            <div>
+              <input type="radio" id="public" name="public" value="0">
+              <label for="private">Private</label>
+            </div>
+          </div>
           <br><br>
-          <input type="radio" id="public" name="public" value="0">
-          <label for="private">Private</label><br>
-          <input type="radio" id="public" name="public" value="1">
-          <label for="public">Public</label><br>
+          <hr class="hr">
           <br><br>
-          <hr>
-          <br><br>
-          <button type="button">Next step</button>
+          <button class="secondary-button"
+                  id="btn-add-questions"
+                  type="button">Add questions</button>
         </div>
-        <br><br>
 
         <div class="step_2">
-          <label>Question</label>
-          <input type="text" id="question" name="question_text" placeholder="Enter a question">
+          <button class="secondary-button"
+                  id="btn-back"
+                  type="button">Back to quiz info</button>
+          <div class="question">
+            <label class="form-label">Question</label>
+            <input class="input-text"
+                   type="text"
+                   id="question"
+                   name="question_text"
+                   placeholder="Enter a question">
+            <br><br>
+            <label class="form-label">First answer</label>
+            <input class="input-text"
+                   type="text"
+                   name="option_1"
+                   placeholder="Enter an answer choice">
+            <div class="radio-answer">
+              <input type="checkbox"
+                     id="radio_1"
+                     name="correct_answer"
+                     value="1"
+                     checked="checked">
+              <label for="radio_1">Correct answer</label>
+            </div>
+            <br><br>
+            <label class="form-label">Second answer</label>
+            <input class="input-text"
+                   type="text"
+                   name="option_2"
+                   placeholder="Enter an answer choice">
+            <div class="radio-answer">
+              <input type="checkbox"
+                     id="radio_2"
+                     name="correct_answer"
+                     value="2">
+              <label for="radio_2">Correct answer</label>
+            </div>
+            <br><br>
+            <label class="form-label">Third answer</label>
+            <input class="input-text"
+                   type="text"
+                   name="option_3"
+                   placeholder="Enter an answer choice">
+            <div class="radio-answer">
+              <input type="checkbox"
+                     id="radio_3"
+                     name="correct_answer"
+                     value="3">
+              <label for="radio_3">Correct answer</label>
+            </div>
+          </div>
+          <div class="questions-container"></div>
+          <button class="secondary-button"
+                  id="btn-add-question"
+                  type="button">Add a question</button>
           <br><br>
-          <label>First answer</label>
-          <input type="text" name="option_1" placeholder="Enter an answer choice">
-          <input type="radio" id="radio_1" name="correct_answer" value="1">
-          <label for="radio_1">Correct answer</label>
+          <hr class="hr">
           <br><br>
-          <label>Second answer</label>
-          <input type="text" name="option_2" placeholder="Enter an answer choice">
-          <input type="radio" id="radio_2" name="correct_answer" value="2">
-          <label for="radio_2">Correct answer</label>
-          <br><br>
-          <label>Third answer</label>
-          <input type="text" name="option_3" placeholder="Enter an answer choice">
-          <input type="radio" id="radio_3" name="correct_answer" value="3">
-          <label for="radio_3">Correct answer</label>
-          <br><br>
-          <button type="button">Add a question</button>
-          <br><br>
-          <hr>
-          <br><br>
-          <button type="submit">Submit</button>
-          <br><br>
+          <button class="primary-button" type="submit">Submit</button>
         </div>
-        <br><br>
-
         <div class="step_3">
-          <label>Share with your friends</label>
+          <label class="form-label">Share with your friends</label>
           <br><br>
-          <label>URL to replace by dynamic link</label>
-          <button class="btn"><i class="fa-regular fa-copy"></i></button>
+          <div class="share-link">
+            <label>URL to replace by dynamic link</label>
+            <button class="secondary-button"><i class="fa-regular fa-copy"></i></button>
+          </div>
           <br><br>
-          <button type="button">See all your quizzes</button>
+          <hr class="hr">
+          <br><br>
+          <button class="primary-button" type="button">Go to the quiz</button>
           <br><br>
       </form>
     </main>

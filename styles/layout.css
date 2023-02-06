@@ -1,4 +1,5 @@
 body,
 html {
   margin: 0;
+  box-sizing: border-box;
 }/*# sourceMappingURL=layout.css.map */

@@ -65,7 +65,6 @@ router.get('/new', (req, res) => {
   res.render('create-quiz');
 });
 
-
 router.post('/', (req, res) => {
   // Once login api added, owner_id needs to = userId
   // const userId = req.session.userId;
@@ -74,20 +73,20 @@ router.post('/', (req, res) => {
       console.log('quiz', quiz);
       db.addQuestion({...req.body, quiz_id : quiz.id})
         .then(question => {
-
         })
         .catch(e => {
           console.error(e);
           res.send(e);
         });
+
       let quizID = quiz.id;
       res.redirect(`/quizzes/quiz/${quizID}`);
+
     })
     .catch(e => {
       console.error(e);
       res.send(e);
     });
-
 
   return router;
 

@@ -1,0 +1,154 @@
+$backgroundColour: #fff;
+$textColour: #000;
+$bold: 600;
+$buttonColour: #63099c;
+$buttonColour-hover: #814fa0;
+$buttonTextColour: #fff;
+
+.new-quiz-form {
+  display: flex;
+  flex-direction: column;
+  padding: 50px 30px;
+  background-color: $backgroundColour;
+  width: 50%;
+  border-radius: 4px;
+}
+
+.question {
+  display: flex;
+  flex-direction: column;
+  padding: 50px 30px;
+}
+
+.question-header {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+
+}
+
+.form-label {
+  padding-bottom: 20px;
+}
+
+.input-text {
+  height: 45px;
+  padding: 15px;
+  border-radius: 4px;
+  border-width: 1px;
+}
+
+.input-area {
+  padding: 15px;
+  border-radius: 4px;
+  border-width: 1px;
+}
+
+.step_1 {
+  display: flex;
+  flex-direction: column;
+}
+
+.step_2 {
+  display: none;
+  flex-direction: column;
+}
+
+.step_3 {
+  display: none;
+  flex-direction: column;
+}
+
+.privacy {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  max-width: 35%;
+}
+
+.secondary-button {
+  background-color: #4a444490;
+  border-radius: 8px;
+  border-style: none;
+  color: #FFFFFF;
+  cursor: pointer;
+  display: inline-block;
+  font-family: "Haas Grot Text R Web", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 14px;
+  font-weight: 500;
+  height: 40px;
+  width: fit-content;
+  line-height: 20px;
+  list-style: none;
+  margin: 0;
+  outline: none;
+  padding: 10px 16px;
+  position: rigth;
+  text-align: center;
+  text-decoration: none;
+  transition: color 100ms;
+  vertical-align: baseline;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+}
+
+.secondary-button:hover,
+.secondary-button:focus {
+  background-color: #a79eb38a;
+}
+
+.primary-button {
+  background-color: $buttonColour;
+  border-radius: 8px;
+  border-style: none;
+  color: #FFFFFF;
+  cursor: pointer;
+  display: inline-block;
+  font-family: "Haas Grot Text R Web", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 14px;
+  font-weight: 500;
+  height: 40px;
+  width: fit-content;
+  line-height: 20px;
+  list-style: none;
+  margin: 0;
+  outline: none;
+  padding: 10px 16px;
+  position: rigth;
+  text-align: center;
+  text-decoration: none;
+  transition: color 100ms;
+  vertical-align: baseline;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+}
+
+.primary-button:hover,
+.primary-button:focus {
+  background-color: $buttonColour-hover;
+}
+
+.hr {
+  border: 1px solid #63099c;
+  margin-left: 0;
+  margin-right: 0;
+}
+
+.radio-answer {
+  padding-top: 20px;
+}
+
+.share-link {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  max-width: 40%;
+}
+
+
+
+
