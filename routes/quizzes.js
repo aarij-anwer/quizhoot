@@ -4,6 +4,23 @@ const db = require('../db/queries/database');
 const router  = express.Router();
 
 
+/// view all quizzes
+router.get('/home', (req, res) => {
+  db.getAllQuizzes(10)
+    .then(data => {
+      const templateVars = {
+        quizzes: data
+      };
+      res.render('home-page', templateVars);
+    })
+    .catch(e => {
+      console.error(e);
+      res.send(e);
+    });
+});
+
+
+//// Create a quiz
 router.get('/new', (req, res) => {
   res.render('create-quiz');
 });
@@ -14,7 +31,7 @@ router.post('/', (req, res) => {
   // const userId = req.session.userId;
   db.createNewQuiz({...req.body, owner_id : 1})
     .then(quiz => {
-console.log(quiz);
+      console.log(quiz);
       db.addQuestion({...req.body, quiz_id : quiz.id})
         .then(question => {
 
@@ -35,5 +52,6 @@ console.log(quiz);
   return router;
 
 });
+
 
 module.exports = router;
