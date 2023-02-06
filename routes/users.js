@@ -13,6 +13,9 @@ router.get('/', (req, res) => {
   res.render('users');
 });
 
+router.get('/users/new', (req, res) => {
+
+});
 
 
 
