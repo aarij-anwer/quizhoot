@@ -74,7 +74,6 @@ const getAllUserQuizzes = function(owner_id) {
     });
 };
 
-<<<<<<< HEAD
 const getUserTotalQuizzes = function(owner_id) {
   return db
     .query(
@@ -90,11 +89,6 @@ const getUserTotalQuizzes = function(owner_id) {
     });
 };
 
-
-
-module.exports = { createNewQuiz, addQuestion, getAllQuizzes, getAllUserQuizzes, getUserTotalQuizzes };
-=======
 module.exports = { createNewQuiz, addQuestion, getAllQuizzes, getQuizQuestionsById, getQuizTitle, getAllUserQuizzes };
->>>>>>> master
 
 

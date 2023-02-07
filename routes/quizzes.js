@@ -60,11 +60,7 @@ router.get('/user/:id', (req, res) => {
     });
 });
 
-<<<<<<< HEAD
-// Create a quiz
-=======
 //// Create a quiz \\\\
->>>>>>> master
 router.get('/new', (req, res) => {
   res.render('create-quiz');
 });
