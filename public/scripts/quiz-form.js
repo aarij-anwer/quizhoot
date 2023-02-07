@@ -107,7 +107,6 @@ $(() => {
     const data = $('#new-quiz-form').serialize();
     $.post('/quizzes', data, (response) => {
       console.log('post response:', response);
-
     });
   });
 });

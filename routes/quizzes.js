@@ -46,6 +46,7 @@ router.post('/', (req, res) => {
   // const userId = req.session.userId;
   db.createNewQuiz({...req.body, owner_id : 1})
     .then(quiz => {
+      console.log('quiz', quiz);
       const promises = [];
       //creates the questions array
       for (let question of req.body.questions) {
@@ -55,6 +56,7 @@ router.post('/', (req, res) => {
       //collects all the question promises and returns the questions array to be funneled into the single page view
       Promise.all(promises)
         .then((questions => {
+          console.log('questions', questions);
           let quizID = quiz.id;
           res.redirect(`/quizzes/quiz/${quizID}`);
         }))
@@ -62,7 +64,6 @@ router.post('/', (req, res) => {
           console.error(e);
           res.send(e);
         });
-
     })
     .catch(e => {
       console.error(e);

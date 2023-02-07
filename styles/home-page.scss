@@ -1,14 +1,18 @@
 @import 'variables';
 
 .card {
-width: 700px;
+// width: 700px;
+display: flex;
+flex-direction: column;
+padding: 50px 30px;
+background-color: $white;
+width: 50%;
+border-radius: 4px;
 }
 
-.card-body {
-padding: 15px;
-background-color: $lightGrey;
-}
 
 .card-body h3 {
   text-align: left;
 }
+
+

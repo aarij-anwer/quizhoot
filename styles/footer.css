@@ -1,3 +1,49 @@
+h1 {
+  color: #fff;
+  font-size: 40px;
+}
+
+p {
+  color: #000;
+  font-size: 17px;
+}
+
+.primary-button {
+  background-color: #2f3e46;
+  border-radius: 8px;
+  border-style: none;
+  color: #fff;
+  cursor: pointer;
+  display: inline-block;
+  font-family: "Haas Grot Text R Web", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 14px;
+  font-weight: 500;
+  height: 40px;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  line-height: 20px;
+  list-style: none;
+  margin: 0;
+  outline: none;
+  padding: 10px 16px;
+  position: right;
+  text-align: center;
+  text-decoration: none;
+  transition: color 100ms;
+  vertical-align: baseline;
+  -moz-user-select: none;
+   -ms-user-select: none;
+       user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+}
+
+.primary-button:hover,
+.primary-button:focus {
+  background-color: #52796f;
+}
+
 .footer {
   width: 100%;
   text-align: center;
