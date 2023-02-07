@@ -16,7 +16,8 @@
   <link rel="stylesheet" href="/styles/main.css" />
   <link rel="stylesheet" href="/styles/layout.css" />
   <link rel="stylesheet" href="/styles/header.css" />
-  <link rel="stylesheet" href="/styles/quiz-form.css" />
+  <link rel="stylesheet" href="/styles/user-profile.css" />
+  <link rel="stylesheet" href="/styles/footer.css" />
 
   <script src="/vendor/jquery-3.0.0.js"></script>
   <script defer src="/scripts/app.js"></script>
@@ -35,6 +36,23 @@
           <hr class="hr">
           <div class="private-quiz-container">
             <% for (let quiz of quizzes) { %>
+              <% if (!quiz.public) { %>
+                <div class="card">
+                  <div class="card-body">
+                    <h3 class="card-title"><%= quiz.title %></h3>
+                    <p class="card-text"><%= quiz.description %></p>
+                    <a href="/quizzes/quiz/<%= quiz.id %>" class="btn btn-primary">View the Quiz</a>
+                  </div>
+                </div>
+             <% } %>
+            <% } %>
+          </div>
+          <br><br>
+          <h3>Public</h3>
+          <hr class="hr">
+          <div class="public-quiz-container"></div>
+           <% for (let quiz of quizzes) { %>
+            <% if (quiz.public) { %>
               <div class="card">
                 <div class="card-body">
                   <h3 class="card-title"><%= quiz.title %></h3>
@@ -43,16 +61,11 @@
                 </div>
               </div>
               <% } %>
-          </div>
-          <br><br>
-          <h3>Public</h3>
-          <hr class="hr">
-          <div class="public-quiz-container"></div>
+            <% } %>
         </div>
         <div class="user-profile">
-
+          <img class="profile-img" src="/docs/Profile-Male.png" alt="profile image">
           <h2>Hello <%= quizzes[0].username %></h2>
-
           <h3>Completed quizzes</h3>
           <h3>Open quizzes</h3>
         </div>

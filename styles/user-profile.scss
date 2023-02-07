@@ -1,0 +1,42 @@
+$backgroundColour: #fff;
+$textColour: #000;
+$bold: 600;
+$buttonColour: #63099c;
+$buttonColour-hover: #814fa0;
+$buttonTextColour: #fff;
+
+.profile-layout {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 80%;
+}
+
+.user-quizzes {
+  display: flex;
+  flex-direction: column;
+  padding: 50px 30px;
+  background-color: $backgroundColour;
+  width: 65%;
+  border-radius: 4px;
+}
+.user-profile {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 50px 30px;
+  background-color: $backgroundColour;
+  width: 30%;
+  border-radius: 4px;
+}
+
+.profile-img {
+  width: 170px;
+  height: 170px;
+}
+
+.hr {
+  border: 1px solid #63099c;
+  margin-left: 0;
+  margin-right: 0;
+}
