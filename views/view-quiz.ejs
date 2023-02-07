@@ -34,7 +34,7 @@
 
           <Ul class="quiz">
             <Li>
-              <H4>
+              <H4 class="quiz-question">
                 <%= quiz.question_text %>
               </H4>
               <Ul class="choices">
@@ -58,7 +58,8 @@
           </Ul>
           <% } %>
 
-            <Button Class="View-Results" Onclick="ReturnScore()">Submit</Button>
+            <Button Class="view-results" Onclick="ReturnScore()">Submit</Button>
+            <br><br>
     </main>
     <%- include('partials/_footer') %>
 </body>

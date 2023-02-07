@@ -1,11 +1,20 @@
 .quiz {
   display: flex;
   flex-direction: column;
-  justify-content: flex-start;
-  align-items: left;
-  text-align: left;
-  align-content: flex-start;
-  width: 700px;
+  padding: 50px 30px;
+  background-color: #fff;
+  width: 50%;
+  border-radius: 4px;
+}
+
+.quiz-question {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  padding-bottom: 8px;
+  font-weight: 450;
+  font-size: 17px;
 }
 
 .quiz, .choices {
@@ -14,4 +23,34 @@
 
 .choices li {
   padding-top: 3px;
+  font-size: 15.5px;
+}
+
+.view-results {
+  background-color: #63099c;
+  border-radius: 8px;
+  border-style: none;
+  color: #FFFFFF;
+  cursor: pointer;
+  display: inline-block;
+  font-family: "Haas Grot Text R Web", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 15.5px;
+  font-weight: 500;
+  height: 50px;
+  width: 100px;
+  line-height: 20px;
+  list-style: none;
+  margin: 0;
+  outline: none;
+  padding: 10px 16px;
+  position: right;
+  text-align: center;
+  text-decoration: none;
+  transition: color 100ms;
+  vertical-align: baseline;
+  -moz-user-select: none;
+   -ms-user-select: none;
+       user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
 }/*# sourceMappingURL=view-a-quiz.css.map */
