@@ -1,3 +1,4 @@
+/* eslint-disable camelcase */
 const db = require('../connection');
 
 const createNewQuiz = function(quiz) {
@@ -13,7 +14,6 @@ const createNewQuiz = function(quiz) {
 const addQuestion = function(question) {
   console.log(question);
   return db
-
     .query(`INSERT INTO questions(quiz_id, question_text, option_1, option_2, option_3, correct_answer) VALUES($1, $2, $3, $4, $5, $6) RETURNING *`,
       [question.quiz_id, question.question_text, question.option_1, question.option_2, question.option_3, question.correct_answer])
     .then(data => {
@@ -59,23 +59,21 @@ const getQuizTitle = function(id) {
     });
 };
 
-module.exports = { createNewQuiz, addQuestion, getAllQuizzes, getQuizQuestionsById, getQuizTitle };
-// CREATE TABLE quizzes (
-//   id SERIAL PRIMARY KEY NOT NULL,
-//   owner_id INTEGER REFERENCES users(id),
-//   title VARCHAR(255) NOT NULL,
-//   description TEXT NOT NULL,
-//   public BOOLEAN NOT NULL,
-//   Total_questions INTEGER
-// );
-// CREATE TABLE questions (
-//   id SERIAL PRIMARY KEY NOT NULL,
-//   quiz_id INTEGER REFERENCES quizzes(id),
-//   question_text VARCHAR(255) NOT NULL,
-//   option_1 VARCHAR(255) NOT NULL,
-//   option_2 VARCHAR(255) NOT NULL,
-//   option_3 VARCHAR(255) NOT NULL,
-//   correct_answer VARCHAR(255) NOT NULL
-// );
+const getAllUserQuizzes = function(owner_id) {
+  return db
+    .query(
+      `SELECT quizzes.id, title, description, public, users.name as username
+      FROM quizzes JOIN users ON users.id = owner_id
+      WHERE quizzes.owner_id = $1;
+      `,[owner_id])
+    .then((result) => {
+      return result.rows;
+    })
+    .catch((err) => {
+      console.log(err.message);
+    });
+};
+
+module.exports = { createNewQuiz, addQuestion, getAllQuizzes, getQuizQuestionsById, getQuizTitle, getAllUserQuizzes };
 
 
