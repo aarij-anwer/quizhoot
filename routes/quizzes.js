@@ -41,24 +41,35 @@ router.get('/quiz/:quiz_id', (req, res) => {
 /// view my quizzes \\\
 router.get('/user/:id', (req, res) => {
   // const userId = req.session.userId;
+  const templateVars = {
+  };
   const userId = 1;
   db.getAllUserQuizzes(userId)
     .then(data => {
+      // console.log("test", data);
+      templateVars ["quizzes"] = data;
       db.getUserTotalQuizzes(userId)
-        .then(user_data => {
-          console.log(user_data);
-          const templateVars = {
-            quizzes: data,
-            users: user_data
-          };
-          res.render('user-profile', templateVars);
+        .then(data1 => {
+          console.log("test1", data1);
+          templateVars ["total_quizzes"] = data1;
+
+
+          db.getUserAttempts(userId)
+            .then(data2 => {
+              console.log("test3", data2);
+              templateVars ["attempts"] = data2;
+              res.render('user-profile', templateVars);
+            });
+
         });
     })
     .catch(e => {
       console.error(e);
       res.send(e);
     });
+
 });
+
 
 //// Create a quiz \\\\
 router.get('/new', (req, res) => {

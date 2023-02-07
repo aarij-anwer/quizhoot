@@ -7,6 +7,15 @@
   width: 80%;
 }
 
+.card-profile {
+  display: flex;
+  flex-direction: column;
+  padding: 50px 30px;
+  margin-bottom: 18px;
+  background-color: $lightGrey;
+  border-radius: 4px;
+  }
+
 .user-quizzes {
   display: flex;
   flex-direction: column;
@@ -62,6 +71,12 @@
 }
 
 .score {
-  font-size: 72px;
+  font-size: 100px;
+  font-weight: 800;
+}
+
+.big-number {
+  font-size: 50px;
+  font-weight: 800;
 }
 

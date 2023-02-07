@@ -79,16 +79,31 @@ const getUserTotalQuizzes = function(owner_id) {
     .query(
       `SELECT count(quizzes.*) as total_quizzes
       FROM quizzes JOIN users ON users.id = owner_id
-      WHERE quizzes.owner_id = 1;
+      WHERE quizzes.owner_id = $1;
       `,[owner_id])
     .then((result) => {
-      return result.rows;
+      return result.rows[0];
     })
     .catch((err) => {
       console.log(err.message);
     });
 };
 
-module.exports = { createNewQuiz, addQuestion, getAllQuizzes, getQuizQuestionsById, getQuizTitle, getAllUserQuizzes };
+const getUserAttempts = function(owner_id) {
+  return db
+    .query(
+      `SELECT count(quiz_attempts.*) as total_attempts, avg(ROUND(total_score)) as avg_score
+      FROM quiz_attempts JOIN users ON users.id = user_id
+      WHERE quiz_attempts.user_id = $1;
+      `,[owner_id])
+    .then((result) => {
+      return result.rows[0];
+    })
+    .catch((err) => {
+      console.log(err.message);
+    });
+};
+
+module.exports = { createNewQuiz, addQuestion, getAllQuizzes, getQuizQuestionsById, getQuizTitle, getAllUserQuizzes, getUserTotalQuizzes, getUserAttempts };
 
 
