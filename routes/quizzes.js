@@ -1,6 +1,7 @@
 /* eslint-disable camelcase */
 const express = require('express');
 const db = require('../db/queries/database');
+const { getUser } = require('../db/queries/users');
 const router  = express.Router();
 
 
@@ -12,6 +13,23 @@ router.get('/home', (req, res) => {
         quizzes: data
       };
       res.render('home-page', templateVars);
+    })
+    .catch(e => {
+      console.error(e);
+      res.send(e);
+    });
+});
+
+// view my quizzes
+router.get('/user/:id', (req, res) => {
+  // const userId = req.session.userId;
+  const userId = 1;
+  db.getAllUserQuizzes(userId)
+    .then(data => {
+      const templateVars = {
+        quizzes: data
+      };
+      res.render('user-profile', templateVars);
     })
     .catch(e => {
       console.error(e);
@@ -33,6 +51,7 @@ router.post('/', (req, res) => {
       console.log(quiz);
       db.addQuestion({...req.body, quiz_id : quiz.id})
         .then(question => {
+          console.log(question);
         })
         .catch(e => {
           console.error(e);
