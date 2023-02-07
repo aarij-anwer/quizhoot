@@ -12,6 +12,7 @@
   background-color: #fff;
   width: 65%;
   border-radius: 4px;
+  margin-bottom: 50px;
 }
 
 .user-profile {
@@ -22,6 +23,7 @@
   background-color: #fff;
   width: 30%;
   border-radius: 4px;
+  margin-bottom: 50px;
 }
 
 .profile-img {
@@ -33,4 +35,31 @@
   border: 1px solid #63099c;
   margin-left: 0;
   margin-right: 0;
+}
+
+.quiz-info {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.info-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  background-color: #cad2c5;
+  width: 48%;
+  padding: 5%;
+  border-radius: 4px;
+}
+
+.average-score {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.score {
+  font-size: 72px;
 }/*# sourceMappingURL=user-profile.css.map */

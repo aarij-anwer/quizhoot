@@ -34,9 +34,10 @@ const getAllQuizzes = function() {
 const getAllUserQuizzes = function(owner_id) {
   return db
     .query(
-      `SELECT quizzes.id, title, description, public, users.name as username
+      `SELECT quizzes.id, title, description, public, users.name as username, count(quizzes. *) as total_quizzes
       FROM quizzes JOIN users ON users.id = owner_id
-      WHERE quizzes.owner_id = $1;
+      WHERE quizzes.owner_id = $1
+      GROUP BY quizzes.id;
       `,[owner_id])
     .then((result) => {
       return result.rows;
@@ -46,6 +47,23 @@ const getAllUserQuizzes = function(owner_id) {
     });
 };
 
-module.exports = { createNewQuiz, addQuestion, getAllQuizzes, getAllUserQuizzes };
+const getUserTotalQuizzes = function(owner_id) {
+  return db
+    .query(
+      `SELECT count(quizzes.*) as total_quizzes
+      FROM quizzes JOIN users ON users.id = owner_id
+      WHERE quizzes.owner_id = 1;
+      `,[owner_id])
+    .then((result) => {
+      return result.rows;
+    })
+    .catch((err) => {
+      console.log(err.message);
+    });
+};
+
+
+
+module.exports = { createNewQuiz, addQuestion, getAllQuizzes, getAllUserQuizzes, getUserTotalQuizzes };
 
 
