@@ -102,11 +102,12 @@ $(() => {
     updateQuestionNum();
   });
 
-  $('#new-quiz-form').on('submit', function() {
-    // console.log("submit button clicked");
-    const data = $('#new-quiz-form').serialize();
-    $.post('/quizzes', data, (response) => {
-      console.log('post response:', response);
-    });
-  });
+  //submits to the quiz (originates before dynamic addition) commented out because of duplication
+  // $('#new-quiz-form').on('submit', function() {
+  //   // console.log("submit button clicked");
+  //   const data = $('#new-quiz-form').serialize();
+  //   $.post('/quizzes', data, (response) => {
+  //     console.log('post response:', response);
+  //   });
+  // });
 });

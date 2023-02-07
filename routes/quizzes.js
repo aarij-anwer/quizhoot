@@ -24,7 +24,7 @@ router.get('/quiz/:quiz_id', (req, res) => {
   const quizId = req.params.quiz_id;
   db.getQuizQuestionsById(quizId)
     .then(data => {
-      console.log('data', data);
+      // console.log('data', data);
       const templateVars = {
         quizzes: data
       };
