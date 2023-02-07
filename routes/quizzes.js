@@ -5,7 +5,7 @@ const { getUser } = require('../db/queries/users');
 const router  = express.Router();
 
 
-/// view all quizzes
+/// view all quizzes \\\
 router.get('/home', (req, res) => {
   db.getAllQuizzes(10)
     .then(data => {
@@ -20,7 +20,25 @@ router.get('/home', (req, res) => {
     });
 });
 
-// view my quizzes
+/// view and attempt a single quiz\\\
+router.get('/quiz/:quiz_id', (req, res) => {
+  const quizId = req.params.quiz_id;
+  db.getQuizQuestionsById(quizId)
+    .then(data => {
+      // console.log('data', data);
+      const templateVars = {
+        quizzes: data
+      };
+      res.render('view-quiz', templateVars);
+    })
+    .catch(e => {
+      console.error(e);
+      res.send(e);
+    });
+});
+
+
+/// view my quizzes \\\
 router.get('/user/:id', (req, res) => {
   // const userId = req.session.userId;
   const userId = 1;
@@ -42,7 +60,11 @@ router.get('/user/:id', (req, res) => {
     });
 });
 
+<<<<<<< HEAD
 // Create a quiz
+=======
+//// Create a quiz \\\\
+>>>>>>> master
 router.get('/new', (req, res) => {
   res.render('create-quiz');
 });
@@ -52,19 +74,24 @@ router.post('/', (req, res) => {
   // const userId = req.session.userId;
   db.createNewQuiz({...req.body, owner_id : 1})
     .then(quiz => {
-      console.log(quiz);
-      db.addQuestion({...req.body, quiz_id : quiz.id})
-        .then(question => {
-          console.log(question);
-        })
+      console.log('quiz', quiz);
+      const promises = [];
+      //creates the questions array
+      for (let question of req.body.questions) {
+        const promise = db.addQuestion({...question, quiz_id : quiz.id});
+        promises.push(promise);
+      }
+      //collects all the question promises and returns the questions array to be funneled into the single page view
+      Promise.all(promises)
+        .then((questions => {
+          console.log('questions', questions);
+          let quizID = quiz.id;
+          res.redirect(`/quizzes/quiz/${quizID}`);
+        }))
         .catch(e => {
           console.error(e);
           res.send(e);
         });
-
-      let quizID = quiz.id;
-      res.redirect(`/quizzes/quiz/${quizID}`);
-
     })
     .catch(e => {
       console.error(e);

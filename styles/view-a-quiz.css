@@ -1,14 +1,32 @@
-h1 {
-  color: #fff;
-  font-size: 40px;
+.quiz {
+  display: flex;
+  flex-direction: column;
+  padding: 50px 30px;
+  background-color: #fff;
+  width: 50%;
+  border-radius: 4px;
 }
 
-p {
-  color: #000;
+.quiz-question {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  padding-bottom: 8px;
+  font-weight: 450;
   font-size: 17px;
 }
 
-.primary-button {
+.quiz, .choices {
+  list-style-type: none;
+}
+
+.choices li {
+  padding-top: 3px;
+  font-size: 15.5px;
+}
+
+.view-results {
   background-color: #2f3e46;
   border-radius: 8px;
   border-style: none;
@@ -16,12 +34,10 @@ p {
   cursor: pointer;
   display: inline-block;
   font-family: "Haas Grot Text R Web", "Helvetica Neue", Helvetica, Arial, sans-serif;
-  font-size: 14px;
+  font-size: 15.5px;
   font-weight: 500;
-  height: 40px;
-  width: -webkit-fit-content;
-  width: -moz-fit-content;
-  width: fit-content;
+  height: 50px;
+  width: 100px;
   line-height: 20px;
   list-style: none;
   margin: 0;
@@ -37,15 +53,4 @@ p {
        user-select: none;
   -webkit-user-select: none;
   touch-action: manipulation;
-}
-
-.primary-button:hover,
-.primary-button:focus {
-  background-color: #52796f;
-}
-
-.footer {
-  width: 100%;
-  text-align: center;
-  background-color: white;
-}/*# sourceMappingURL=footer.css.map */
+}/*# sourceMappingURL=view-a-quiz.css.map */

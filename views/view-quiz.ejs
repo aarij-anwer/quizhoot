@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link rel="stylesheet" href="/vendor/normalize-4.1.1.css" />
+  <link rel="stylesheet" href="/vendor/border-box.css" />
+  <link rel="stylesheet" href="/styles/main.css" />
+  <link rel="stylesheet" href="/styles/layout.css" />
+  <link rel="stylesheet" href="/styles/header.css" />
+  <link rel="stylesheet" href="/styles/footer.css" />
+  <link rel="stylesheet" href="/styles/view-a-quiz.css" />
+
+
+  <script src="/vendor/jquery-3.0.0.js"></script>
+  <script defer src="/scripts/app.js"></script>
+  <title>View Quiz</title>
+</head>
+
+<body>
+  <%- include('partials/_header') %>
+
+    <main>
+      <h1><%= quizzes[0].title %></h1>
+      <p><%= quizzes[0].description %></p>
+
+
+      <% for (let quiz of quizzes) { %>
+
+
+          <Ul class="quiz">
+            <Li>
+              <H4 class="quiz-question">
+                <%= quiz.question_text %>
+              </H4>
+              <Ul class="choices">
+                <Li>
+                  <Label><Input Type="Radio" Name="<%= quiz.id %>" Value="option_1" /><Span>
+                      <%= quiz.option_1 %>
+                    </Span></Label>
+                </Li>
+                <Li>
+                  <Label><Input Type="Radio" Name="<%= quiz.id %>" Value="option_2" /><Span>
+                      <%= quiz.option_2 %>
+                    </Span></Label>
+                </Li>
+                <Li>
+                  <Label><Input Type="Radio" Name="<%= quiz.id %>" Value="option_3" /><Span>
+                      <%= quiz.option_3 %>
+                    </Span></Label>
+                </Li>
+              </Ul>
+            </Li>
+          </Ul>
+          <% } %>
+
+            <Button Class="view-results" Onclick="ReturnScore()">Submit</Button>
+            <br><br>
+    </main>
+    <%- include('partials/_footer') %>
+</body>
+
+</html>

@@ -31,6 +31,34 @@ const getAllQuizzes = function() {
     });
 };
 
+const getQuizQuestionsById = function(id) {
+  return db.query(
+    `SELECT quizzes.id AS quizID, quizzes.title, quizzes.description, questions.*
+    FROM quizzes
+    JOIN questions ON quizzes.id = quiz_id
+    WHERE quizzes.id = $1
+    GROUP BY quizzes.id, questions.id;`, [id])
+    .then((response) => {
+      return response.rows;
+    });
+};
+const getQuizTitle = function(id) {
+  return db.query(
+    `SELECT title
+    FROM quizzes
+    WHERE id = $1;`, [id])
+    .then((response) => {
+      console.log('query test', response.rows[0]);
+      let obj = response.rows[0];
+      let title = '';
+      for (const key in obj) {
+        title = obj[key];
+      }
+      // return response.rows[0];
+      return title;
+    });
+};
+
 const getAllUserQuizzes = function(owner_id) {
   return db
     .query(
@@ -46,6 +74,7 @@ const getAllUserQuizzes = function(owner_id) {
     });
 };
 
+<<<<<<< HEAD
 const getUserTotalQuizzes = function(owner_id) {
   return db
     .query(
@@ -64,5 +93,8 @@ const getUserTotalQuizzes = function(owner_id) {
 
 
 module.exports = { createNewQuiz, addQuestion, getAllQuizzes, getAllUserQuizzes, getUserTotalQuizzes };
+=======
+module.exports = { createNewQuiz, addQuestion, getAllQuizzes, getQuizQuestionsById, getQuizTitle, getAllUserQuizzes };
+>>>>>>> master
 
 
