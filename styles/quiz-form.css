@@ -1,3 +1,13 @@
+h1 {
+  color: #fff;
+  font-size: 40px;
+}
+
+p {
+  color: #000;
+  font-size: 17px;
+}
+
 .new-quiz-form {
   display: flex;
   flex-direction: column;
@@ -18,10 +28,12 @@
   flex-direction: row;
   align-items: center;
   justify-content: space-between;
+  font-size: 17px;
 }
 
 .form-label {
   padding-bottom: 20px;
+  font-size: 17px;
 }
 
 .input-text {
@@ -60,10 +72,10 @@
 }
 
 .secondary-button {
-  background-color: rgba(74, 68, 68, 0.5647058824);
+  background-color: #354f52;
   border-radius: 8px;
   border-style: none;
-  color: #FFFFFF;
+  color: #fff;
   cursor: pointer;
   display: inline-block;
   font-family: "Haas Grot Text R Web", "Helvetica Neue", Helvetica, Arial, sans-serif;
@@ -78,7 +90,7 @@
   margin: 0;
   outline: none;
   padding: 10px 16px;
-  position: rigth;
+  position: right;
   text-align: center;
   text-decoration: none;
   transition: color 100ms;
@@ -92,14 +104,14 @@
 
 .secondary-button:hover,
 .secondary-button:focus {
-  background-color: rgba(167, 158, 179, 0.5411764706);
+  background-color: #52796f;
 }
 
 .primary-button {
-  background-color: #63099c;
+  background-color: #2f3e46;
   border-radius: 8px;
   border-style: none;
-  color: #FFFFFF;
+  color: #fff;
   cursor: pointer;
   display: inline-block;
   font-family: "Haas Grot Text R Web", "Helvetica Neue", Helvetica, Arial, sans-serif;
@@ -114,7 +126,7 @@
   margin: 0;
   outline: none;
   padding: 10px 16px;
-  position: rigth;
+  position: right;
   text-align: center;
   text-decoration: none;
   transition: color 100ms;
@@ -128,11 +140,11 @@
 
 .primary-button:hover,
 .primary-button:focus {
-  background-color: #814fa0;
+  background-color: #52796f;
 }
 
 .hr {
-  border: 1px solid #63099c;
+  border: 1px solid #354f52;
   margin-left: 0;
   margin-right: 0;
 }

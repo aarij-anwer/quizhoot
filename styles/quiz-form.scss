@@ -1,6 +1,7 @@
+@import 'variables';
 $backgroundColour: #fff;
 $textColour: #000;
-$bold: 600;
+
 $buttonColour: #63099c;
 $buttonColour-hover: #814fa0;
 $buttonTextColour: #fff;
@@ -9,7 +10,7 @@ $buttonTextColour: #fff;
   display: flex;
   flex-direction: column;
   padding: 50px 30px;
-  background-color: $backgroundColour;
+  background-color: $white;
   width: 50%;
   border-radius: 4px;
 }
@@ -25,11 +26,12 @@ $buttonTextColour: #fff;
   flex-direction: row;
   align-items: center;
   justify-content: space-between;
-
+  font-size: $questionTextFontSize;
 }
 
 .form-label {
   padding-bottom: 20px;
+  font-size: $questionTextFontSize;
 }
 
 .input-text {
@@ -68,10 +70,10 @@ $buttonTextColour: #fff;
 }
 
 .secondary-button {
-  background-color: #4a444490;
+  background-color: $darkGreen;
   border-radius: 8px;
   border-style: none;
-  color: #FFFFFF;
+  color: $white;
   cursor: pointer;
   display: inline-block;
   font-family: "Haas Grot Text R Web", "Helvetica Neue", Helvetica, Arial, sans-serif;
@@ -84,7 +86,7 @@ $buttonTextColour: #fff;
   margin: 0;
   outline: none;
   padding: 10px 16px;
-  position: rigth;
+  position: right;
   text-align: center;
   text-decoration: none;
   transition: color 100ms;
@@ -96,14 +98,14 @@ $buttonTextColour: #fff;
 
 .secondary-button:hover,
 .secondary-button:focus {
-  background-color: #a79eb38a;
+  background-color: $mediumGreen;
 }
 
 .primary-button {
-  background-color: $buttonColour;
+  background-color: $greenBlack;
   border-radius: 8px;
   border-style: none;
-  color: #FFFFFF;
+  color: $white;
   cursor: pointer;
   display: inline-block;
   font-family: "Haas Grot Text R Web", "Helvetica Neue", Helvetica, Arial, sans-serif;
@@ -116,7 +118,7 @@ $buttonTextColour: #fff;
   margin: 0;
   outline: none;
   padding: 10px 16px;
-  position: rigth;
+  position: right;
   text-align: center;
   text-decoration: none;
   transition: color 100ms;
@@ -128,11 +130,11 @@ $buttonTextColour: #fff;
 
 .primary-button:hover,
 .primary-button:focus {
-  background-color: $buttonColour-hover;
+  background-color: $mediumGreen;
 }
 
 .hr {
-  border: 1px solid #63099c;
+  border: 1px solid $darkGreen;
   margin-left: 0;
   margin-right: 0;
 }

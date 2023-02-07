@@ -1,18 +1,10 @@
-// .quiz {
-//   // display: flex;
-//   // flex-direction: column;
-//   // justify-content: flex-start;
-//   // align-items: left;
-//   // text-align: left;
-//   // align-content: flex-start;
-//   // width: 700px;
-// }
+@import 'variables';
 
 .quiz {
   display: flex;
   flex-direction: column;
   padding: 50px 30px;
-  background-color: #fff;
+  background-color: $white;
   width: 50%;
   border-radius: 4px;
 }
@@ -24,13 +16,12 @@
   justify-content: space-between;
   padding-bottom: 8px;
   font-weight: 450;
-  font-size: 17px;
+  font-size: $questionTextFontSize;
 }
 
 
 .quiz, .choices {
   list-style-type: none;
-  // padding: 0;
 }
 
 .choices li {

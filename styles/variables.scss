@@ -1,9 +1,11 @@
 //colour pallete
+$white: #fff;
 $lightGrey: #cad2c5;
 $lightGreen: #84a98c;
 $mediumGreen: #52796f;
 $darkGreen: #354f52;
 $greenBlack: #2f3e46;
+$black: #000;
 
 // colours
 $backgroundColour: #fff;
@@ -14,3 +16,17 @@ $buttonTextColour: #fff;
 
 //font styles
 $bold: 600;
+$regular: 400;
+$questionTextFontSize: 17px;
+$questionTitleFontSize: 40px;
+$descriptionFontSize: 17px;
+
+//H1 styling
+h1 {
+  color: $white;
+  font-size: $questionTitleFontSize;
+}
+p {
+  color: $black;
+  font-size: $descriptionFontSize;
+}
