@@ -22,6 +22,7 @@ router.get('/logout', (req, res) => {
 
 //login routes
 router.get('/login', (req, res) => {
+  // const user;
   res.render('login');
 });
 
@@ -37,15 +38,12 @@ router.post('/login', (req, res) => {
   db.getUser(email)
     .then(user => {
       console.log("returned user", user);
-      const templateVars = {
-        user
-      };
       if (user) {
         res.cookie('user_id', user.id);
         res.redirect('/quizzes/home');
       } else {
         console.log("user doesn't exist");
-        res.redirect('/login', templateVars);
+        res.redirect('/login');
       }
     })
     .catch(e => res.send(e));
