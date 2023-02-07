@@ -26,10 +26,15 @@ router.get('/user/:id', (req, res) => {
   const userId = 1;
   db.getAllUserQuizzes(userId)
     .then(data => {
-      const templateVars = {
-        quizzes: data
-      };
-      res.render('user-profile', templateVars);
+      db.getUserTotalQuizzes(userId)
+        .then(user_data => {
+          console.log(user_data);
+          const templateVars = {
+            quizzes: data,
+            users: user_data
+          };
+          res.render('user-profile', templateVars);
+        });
     })
     .catch(e => {
       console.error(e);

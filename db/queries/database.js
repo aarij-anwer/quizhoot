@@ -34,10 +34,9 @@ const getAllQuizzes = function() {
 const getAllUserQuizzes = function(owner_id) {
   return db
     .query(
-      `SELECT quizzes.id, title, description, public, users.name as username, count(quizzes. *) as total_quizzes
+      `SELECT quizzes.id, title, description, public, users.name as username
       FROM quizzes JOIN users ON users.id = owner_id
-      WHERE quizzes.owner_id = $1
-      GROUP BY quizzes.id;
+      WHERE quizzes.owner_id = $1;
       `,[owner_id])
     .then((result) => {
       return result.rows;
