@@ -1,3 +1,49 @@
+h1 {
+  color: #fff;
+  font-size: 40px;
+}
+
+p {
+  color: #000;
+  font-size: 17px;
+}
+
+.primary-button {
+  background-color: #2f3e46;
+  border-radius: 8px;
+  border-style: none;
+  color: #fff;
+  cursor: pointer;
+  display: inline-block;
+  font-family: "Haas Grot Text R Web", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 14px;
+  font-weight: 500;
+  height: 40px;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  line-height: 20px;
+  list-style: none;
+  margin: 0;
+  outline: none;
+  padding: 10px 16px;
+  position: right;
+  text-align: center;
+  text-decoration: none;
+  transition: color 100ms;
+  vertical-align: baseline;
+  -moz-user-select: none;
+   -ms-user-select: none;
+       user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+}
+
+.primary-button:hover,
+.primary-button:focus {
+  background-color: #52796f;
+}
+
 .new-quiz-form {
   display: flex;
   flex-direction: column;
@@ -18,10 +64,12 @@
   flex-direction: row;
   align-items: center;
   justify-content: space-between;
+  font-size: 17px;
 }
 
 .form-label {
   padding-bottom: 20px;
+  font-size: 17px;
 }
 
 .input-text {
@@ -60,10 +108,10 @@
 }
 
 .secondary-button {
-  background-color: rgba(74, 68, 68, 0.5647058824);
+  background-color: #354f52;
   border-radius: 8px;
   border-style: none;
-  color: #FFFFFF;
+  color: #fff;
   cursor: pointer;
   display: inline-block;
   font-family: "Haas Grot Text R Web", "Helvetica Neue", Helvetica, Arial, sans-serif;
@@ -78,7 +126,7 @@
   margin: 0;
   outline: none;
   padding: 10px 16px;
-  position: rigth;
+  position: right;
   text-align: center;
   text-decoration: none;
   transition: color 100ms;
@@ -92,47 +140,11 @@
 
 .secondary-button:hover,
 .secondary-button:focus {
-  background-color: rgba(167, 158, 179, 0.5411764706);
-}
-
-.primary-button {
-  background-color: #63099c;
-  border-radius: 8px;
-  border-style: none;
-  color: #FFFFFF;
-  cursor: pointer;
-  display: inline-block;
-  font-family: "Haas Grot Text R Web", "Helvetica Neue", Helvetica, Arial, sans-serif;
-  font-size: 14px;
-  font-weight: 500;
-  height: 40px;
-  width: -webkit-fit-content;
-  width: -moz-fit-content;
-  width: fit-content;
-  line-height: 20px;
-  list-style: none;
-  margin: 0;
-  outline: none;
-  padding: 10px 16px;
-  position: rigth;
-  text-align: center;
-  text-decoration: none;
-  transition: color 100ms;
-  vertical-align: baseline;
-  -moz-user-select: none;
-   -ms-user-select: none;
-       user-select: none;
-  -webkit-user-select: none;
-  touch-action: manipulation;
-}
-
-.primary-button:hover,
-.primary-button:focus {
-  background-color: #814fa0;
+  background-color: #52796f;
 }
 
 .hr {
-  border: 1px solid #63099c;
+  border: 1px solid #354f52;
   margin-left: 0;
   margin-right: 0;
 }

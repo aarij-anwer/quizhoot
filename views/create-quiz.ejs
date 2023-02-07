@@ -27,7 +27,7 @@
 <body>
   <%- include('partials/_header') %>
     <main>
-      <h1>Create a quiz</h1>
+      <h1>Create a Quiz</h1>
       <br><br>
       <form action ="/quizzes" method="POST" id="new-quiz-form" class="new-quiz-form">
         <div class="step_1">
@@ -70,54 +70,7 @@
           <button class="secondary-button"
                   id="btn-back"
                   type="button">Back to quiz info</button>
-          <div class="question">
-            <label class="form-label">Question</label>
-            <input class="input-text"
-                   type="text"
-                   id="question"
-                   name="question_text"
-                   placeholder="Enter a question">
-            <br><br>
-            <label class="form-label">First answer</label>
-            <input class="input-text"
-                   type="text"
-                   name="option_1"
-                   placeholder="Enter an answer choice">
-            <div class="radio-answer">
-              <input type="checkbox"
-                     id="radio_1"
-                     name="correct_answer"
-                     value="1"
-                     checked="checked">
-              <label for="radio_1">Correct answer</label>
-            </div>
-            <br><br>
-            <label class="form-label">Second answer</label>
-            <input class="input-text"
-                   type="text"
-                   name="option_2"
-                   placeholder="Enter an answer choice">
-            <div class="radio-answer">
-              <input type="checkbox"
-                     id="radio_2"
-                     name="correct_answer"
-                     value="2">
-              <label for="radio_2">Correct answer</label>
-            </div>
-            <br><br>
-            <label class="form-label">Third answer</label>
-            <input class="input-text"
-                   type="text"
-                   name="option_3"
-                   placeholder="Enter an answer choice">
-            <div class="radio-answer">
-              <input type="checkbox"
-                     id="radio_3"
-                     name="correct_answer"
-                     value="3">
-              <label for="radio_3">Correct answer</label>
-            </div>
-          </div>
+
           <div class="questions-container"></div>
           <button class="secondary-button"
                   id="btn-add-question"
