@@ -17,13 +17,26 @@ router.get('/', (req, res) => {
 //logout route
 router.get('/logout', (req, res) => {
   res.clearCookie("user_id");
+  res.clearCookie("name");
   res.redirect('/quizzes/home');
 });
 
 //login routes
 router.get('/login', (req, res) => {
-  // const user;
-  res.render('login');
+  const userID = req.cookies.user_id;
+  const name = req.cookies.name;
+
+  const templateVars = {
+    userID,
+    name
+  };
+
+  if (userID) {
+    //user logged in
+    res.redirect('/quizzes/home');
+  } else {
+    res.render('login', templateVars);
+  }
 });
 
 router.post('/login', (req, res) => {
@@ -40,18 +53,35 @@ router.post('/login', (req, res) => {
       console.log("returned user", user);
       if (user) {
         res.cookie('user_id', user.id);
+        res.cookie('name', user.name);
         res.redirect('/quizzes/home');
       } else {
         console.log("user doesn't exist");
-        res.redirect('/login');
+        // res.redirect('/users/login');
+        return res.status(400).send(`<p>User does not exist!</p><button onclick="history.back()">Go Back</button>`);
       }
     })
     .catch(e => res.send(e));
+
+  //haven't checked password
 });
 
 //user registration routes
 router.get('/new', (req, res) => {
-  res.render('register');
+  const userID = req.cookies.user_id;
+  const name = req.cookies.name;
+
+  const templateVars = {
+    userID,
+    name
+  };
+
+  if (userID) {
+    //user logged in
+    res.redirect('/quizzes/home');
+  } else {
+    res.render('register', templateVars);
+  }
 });
 
 router.post('/', (req, res) => {
@@ -82,6 +112,7 @@ router.post('/', (req, res) => {
               return res.status(400).send(`<p>Something went wrong with the DB`);
             }
             console.log(addedUser);
+            res.cookie('name', addedUser.name);
             res.cookie('user_id', addedUser.id);
             res.redirect('/quizzes/home');
           })

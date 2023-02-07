@@ -3,11 +3,13 @@
     <div class="nav-container">
       <img class="logo-img" src="/docs/Quizhoot Logo1.png" alt="quizhoot logo-img">
       <button><a href="/quizzes/home"> Home</a></button>
+      <% if (userID) { %>
       <button><a href="/quizzes/new">Create a Quiz</a></button>
-      <button><a href="/quizzes/user/1"> Profile</a></button>
+      <button><a href="/quizzes/user/<%-userID-%>"> Profile</a></button>
       <button><a href="/users/logout"> Logout </a></button>
+      <% } else { %>
       <button><a href="/users/login"> Login </a></button>
-
+      <% } %>
       </div>
   </nav>
 
