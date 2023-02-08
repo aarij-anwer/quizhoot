@@ -15,6 +15,10 @@
   <link rel="stylesheet" href="/styles/footer.css" />
   <link rel="stylesheet" href="/styles/view-a-quiz.css" />
 
+  <!-- External CSS -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"
+    integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
 
   <script src="/vendor/jquery-3.0.0.js"></script>
   <script defer src="/scripts/app.js"></script>
@@ -60,6 +64,10 @@
 
             <Button Class="view-results" Onclick="ReturnScore()">Submit</Button>
             <br><br>
+            <Button variant="contained" class="primary-button" size="large" onClick="navigator.clipboard.writeText(window.location.href);this.insertAdjacentHTML('afterend', '<div class=linktooltips-container>Link copied</div>');setTimeout(() => { document.querySelectorAll('.linktooltips-container').forEach(el => el.remove()); }, 3000);"> Share Quiz With Your Friends! </Button>
+     <br><br>
+
+
     </main>
     <%- include('partials/_footer') %>
 </body>
