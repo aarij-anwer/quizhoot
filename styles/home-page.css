@@ -1,6 +1,8 @@
 h1 {
   color: #fff;
   font-size: 40px;
+  font-weight: 600;
+  text-transform: uppercase;
 }
 
 h3 {
@@ -44,9 +46,73 @@ p {
   touch-action: manipulation;
 }
 
+.primary-button a {
+  text-decoration: none;
+  color: #fff;
+}
+
 .primary-button:hover,
 .primary-button:focus {
   background-color: #52796f;
+}
+
+.form-label {
+  padding-bottom: 20px;
+  font-size: 17px;
+}
+
+.input-text {
+  height: 45px;
+  padding: 15px;
+  border-radius: 4px;
+  border-width: 1px;
+}
+
+.welcome {
+  display: flex;
+  font-family: "Pacifico", cursive;
+  font-size: 48px;
+  height: 100px;
+}
+
+.home-layout {
+  padding-top: 50px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 80%;
+}
+
+.quizzes {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  width: 65%;
+  margin-bottom: 50px;
+}
+
+.home-profile {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 50px 30px;
+  background-color: #fff;
+  width: 30%;
+  border-radius: 4px;
+  margin-bottom: 50px;
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
+  margin-top: 100px;
+}
+
+.card-quiz {
+  display: flex;
+  flex-direction: column;
+  padding: 50px 30px;
+  margin-bottom: 18px;
+  background-color: #fff;
+  border-radius: 4px;
 }
 
 .card {
@@ -54,10 +120,58 @@ p {
   flex-direction: column;
   padding: 50px 30px;
   background-color: #fff;
-  width: 50%;
   border-radius: 4px;
 }
 
 .card-body h3 {
   text-align: left;
+}
+
+.profile-img {
+  width: 170px;
+  height: 170px;
+}
+
+.quiz-info {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.info-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  background-color: #cad2c5;
+  width: 48%;
+  padding: 5%;
+  border-radius: 4px;
+}
+
+.average-score {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.score {
+  font-size: 100px;
+  font-weight: 800;
+}
+
+.big-number {
+  font-size: 50px;
+  font-weight: 800;
+}
+
+.login-partial {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.register-partial {
+  display: none;
+  flex-direction: column;
 }/*# sourceMappingURL=home-page.css.map */
