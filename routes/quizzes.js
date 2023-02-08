@@ -7,11 +7,14 @@ const router  = express.Router();
 
 /// view all quizzes \\\
 router.get('/home', (req, res) => {
+  const userId = req.cookies.user_id;
+  const name = req.cookies.name;
   db.getAllQuizzes(10)
     .then(data => {
       const templateVars = {
         quizzes: data,
-        userID: req.cookies.user_id
+        userID: userId,
+        name
       };
       res.render('home-page', templateVars);
     })

@@ -1,6 +1,13 @@
 h1 {
   color: #fff;
   font-size: 40px;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+
+h3 {
+  color: #000;
+  font-size: 20px;
 }
 
 p {
@@ -50,10 +57,11 @@ p {
   align-items: center;
   justify-content: space-between;
   padding: 25px;
-  padding-top: 40px;
-  max-width: 100%;
+  padding-top: 25px;
+  width: 100%;
+  height: 100px;
   background-color: #fff;
-  color: #000;
+  position: fixed;
 }
 
 .logo-img {
@@ -62,13 +70,16 @@ p {
 }
 
 .nav-container button {
+  padding: 0;
+  border: none;
+  background: none;
   text-align: left;
-  background-color: #354f52;
-  color: #fff;
   padding: 15px;
-  font-weight: 600;
 }
 
 .nav-container button a {
-  color: #fff;
+  color: black;
+  text-decoration: none;
+  font-size: 22px;
+  font-weight: 500;
 }/*# sourceMappingURL=header.css.map */
