@@ -41,10 +41,12 @@ router.get('/quiz/:quiz_id', (req, res) => {
 
 /// view my quizzes \\\
 router.get('/user/:id', (req, res) => {
-  // const userId = req.session.userId;
+  const userId = req.cookies.user_id;
+  const name = req.cookies.name;
   const templateVars = {
+    userID: userId,
+    name
   };
-  const userId = 1;
   db.getAllUserQuizzes(userId)
     .then(data => {
       // console.log("test", data);
@@ -60,23 +62,20 @@ router.get('/user/:id', (req, res) => {
               res.render('user-profile', templateVars);
             });
         });
-  // const userId = req.cookies.user_id;
-  // const name = req.cookies.name;
-
-  // db.getAllUserQuizzes(userId)
-  //   .then(data => {
-  //     const templateVars = {
-  //       quizzes: data,
-  //       userID: userId,
-  //       name
-  //     };
-  //     console.log(templateVars);
-  //     res.render('user-profile', templateVars);
-  //   })
-  //   .catch(e => {
-  //     console.error(e);
-  //     res.send(e);
-  //   });
+      // db.getAllUserQuizzes(userId)
+      //   .then(data => {
+      //     const templateVars = {
+      //       quizzes: data,
+      //       userID: userId,
+      //       name
+      //     };
+      //     console.log(templateVars);
+      //     res.render('user-profile', templateVars);
+      //   })
+      //   .catch(e => {
+      //     console.error(e);
+      //     res.send(e);
+    });
 
 });
 
