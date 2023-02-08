@@ -3,6 +3,11 @@ h1 {
   font-size: 40px;
 }
 
+h3 {
+  color: #000;
+  font-size: 20px;
+}
+
 p {
   color: #000;
   font-size: 17px;

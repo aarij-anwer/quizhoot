@@ -7,11 +7,14 @@ const router  = express.Router();
 
 /// view all quizzes \\\
 router.get('/home', (req, res) => {
+  const userId = req.cookies.user_id;
+  const name = req.cookies.name;
   db.getAllQuizzes(10)
     .then(data => {
       const templateVars = {
         quizzes: data,
-        userID: req.cookies.user_id
+        userID: userId,
+        name
       };
       res.render('home-page', templateVars);
     })
@@ -53,7 +56,6 @@ router.get('/user/:id', (req, res) => {
   };
   db.getAllUserQuizzes(userId)
     .then(data => {
-      // console.log("test", data);
       templateVars ["quizzes"] = data;
       db.getUserTotalQuizzes(userId)
         .then(data1 => {
@@ -66,23 +68,8 @@ router.get('/user/:id', (req, res) => {
               res.render('user-profile', templateVars);
             });
         });
-      // db.getAllUserQuizzes(userId)
-      //   .then(data => {
-      //     const templateVars = {
-      //       quizzes: data,
-      //       userID: userId,
-      //       name
-      //     };
-      //     console.log(templateVars);
-      //     res.render('user-profile', templateVars);
-      //   })
-      //   .catch(e => {
-      //     console.error(e);
-      //     res.send(e);
     });
-
 });
-
 
 //// Create a quiz \\\\
 router.get('/new', (req, res) => {
