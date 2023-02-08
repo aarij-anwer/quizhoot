@@ -24,11 +24,15 @@ router.get('/home', (req, res) => {
 /// view and attempt a single quiz\\\
 router.get('/quiz/:quiz_id', (req, res) => {
   const quizId = req.params.quiz_id;
+  const userId = req.cookies.user_id;
+  const name = req.cookies.name;
   db.getQuizQuestionsById(quizId)
     .then(data => {
       // console.log('data', data);
       const templateVars = {
-        quizzes: data
+        quizzes: data,
+        userID: userId,
+        name
       };
       res.render('view-quiz', templateVars);
     })
