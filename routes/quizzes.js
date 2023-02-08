@@ -43,22 +43,42 @@ router.get('/quiz/:quiz_id', (req, res) => {
 router.get('/user/:id', (req, res) => {
   const userId = req.cookies.user_id;
   const name = req.cookies.name;
-
+  const templateVars = {
+    userID: userId,
+    name
+  };
   db.getAllUserQuizzes(userId)
     .then(data => {
-      const templateVars = {
-        quizzes: data,
-        userID: userId,
-        name
-      };
-      console.log(templateVars);
-      res.render('user-profile', templateVars);
-    })
-    .catch(e => {
-      console.error(e);
-      res.send(e);
+      // console.log("test", data);
+      templateVars ["quizzes"] = data;
+      db.getUserTotalQuizzes(userId)
+        .then(data1 => {
+          console.log("test1", data1);
+          templateVars ["total_quizzes"] = data1;
+          db.getUserAttempts(userId)
+            .then(data2 => {
+              console.log("test3", data2);
+              templateVars ["attempts"] = data2;
+              res.render('user-profile', templateVars);
+            });
+        });
+      // db.getAllUserQuizzes(userId)
+      //   .then(data => {
+      //     const templateVars = {
+      //       quizzes: data,
+      //       userID: userId,
+      //       name
+      //     };
+      //     console.log(templateVars);
+      //     res.render('user-profile', templateVars);
+      //   })
+      //   .catch(e => {
+      //     console.error(e);
+      //     res.send(e);
     });
+
 });
+
 
 //// Create a quiz \\\\
 router.get('/new', (req, res) => {

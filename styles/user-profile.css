@@ -1,8 +1,68 @@
+h1 {
+  color: #fff;
+  font-size: 40px;
+}
+
+h3 {
+  color: #000;
+  font-size: 20px;
+}
+
+p {
+  color: #000;
+  font-size: 17px;
+}
+
+.primary-button {
+  background-color: #2f3e46;
+  border-radius: 8px;
+  border-style: none;
+  color: #fff;
+  cursor: pointer;
+  display: inline-block;
+  font-family: "Haas Grot Text R Web", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 14px;
+  font-weight: 500;
+  height: 40px;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  line-height: 20px;
+  list-style: none;
+  margin: 0;
+  outline: none;
+  padding: 10px 16px;
+  position: right;
+  text-align: center;
+  text-decoration: none;
+  transition: color 100ms;
+  vertical-align: baseline;
+  -moz-user-select: none;
+   -ms-user-select: none;
+       user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+}
+
+.primary-button:hover,
+.primary-button:focus {
+  background-color: #52796f;
+}
+
 .profile-layout {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   width: 80%;
+}
+
+.card-profile {
+  display: flex;
+  flex-direction: column;
+  padding: 50px 30px;
+  margin-bottom: 18px;
+  background-color: #cad2c5;
+  border-radius: 4px;
 }
 
 .user-quizzes {
@@ -12,6 +72,7 @@
   background-color: #fff;
   width: 65%;
   border-radius: 4px;
+  margin-bottom: 50px;
 }
 
 .user-profile {
@@ -22,6 +83,7 @@
   background-color: #fff;
   width: 30%;
   border-radius: 4px;
+  margin-bottom: 50px;
 }
 
 .profile-img {
@@ -33,4 +95,37 @@
   border: 1px solid #63099c;
   margin-left: 0;
   margin-right: 0;
+}
+
+.quiz-info {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.info-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  background-color: #cad2c5;
+  width: 48%;
+  padding: 5%;
+  border-radius: 4px;
+}
+
+.average-score {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.score {
+  font-size: 100px;
+  font-weight: 800;
+}
+
+.big-number {
+  font-size: 50px;
+  font-weight: 800;
 }/*# sourceMappingURL=user-profile.css.map */
