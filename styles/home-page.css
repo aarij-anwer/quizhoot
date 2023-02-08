@@ -212,9 +212,11 @@ p {
 .login-partial {
   display: flex;
   flex-direction: column;
+  width: 90%;
 }
 
 .register-partial {
   display: none;
   flex-direction: column;
+  width: 90%;
 }/*# sourceMappingURL=home-page.css.map */

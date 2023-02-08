@@ -98,12 +98,14 @@ border-radius: 4px;
 .login-partial {
   display: flex;
   flex-direction: column;
-  
+  width: 90%;
+
 }
 
 .register-partial {
   display: none;
   flex-direction: column;
+  width: 90%;
 
 }
 
