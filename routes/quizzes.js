@@ -52,15 +52,12 @@ router.get('/user/:id', (req, res) => {
         .then(data1 => {
           console.log("test1", data1);
           templateVars ["total_quizzes"] = data1;
-
-
           db.getUserAttempts(userId)
             .then(data2 => {
               console.log("test3", data2);
               templateVars ["attempts"] = data2;
               res.render('user-profile', templateVars);
             });
-
         });
     })
     .catch(e => {
