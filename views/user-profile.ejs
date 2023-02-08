@@ -31,7 +31,7 @@
       <br><br>
       <div class="profile-layout">
         <div class="user-quizzes">
-          <h2>Private quizzes</h2>
+          <h2>Private Quizzes</h2>
           <br><br>
           <div class="private-quiz-container">
             <% for (let quiz of quizzes) { %>
@@ -47,7 +47,7 @@
             <% } %>
           </div>
           <br><br>
-          <h2>Public quizzes</h2>
+          <h2>Public Quizzes</h2>
           <br><br>
           <div class="public-quiz-container"></div>
            <% for (let quiz of quizzes) { %>
@@ -64,7 +64,9 @@
         </div>
         <div class="user-profile">
           <img class="profile-img" src="/docs/Profile-Male.png" alt="profile image">
-          <h2>Hello <%= quizzes[0].username %></h2>
+          <h2>Hello <%= name %></h2>
+
+
           <br><br>
           <div class="quiz-info">
             <div class="info-container">
