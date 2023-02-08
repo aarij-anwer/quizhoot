@@ -10,7 +10,8 @@ router.get('/home', (req, res) => {
   db.getAllQuizzes(10)
     .then(data => {
       const templateVars = {
-        quizzes: data
+        quizzes: data,
+        userID: req.cookies.user_id
       };
       res.render('home-page', templateVars);
     })
@@ -40,13 +41,17 @@ router.get('/quiz/:quiz_id', (req, res) => {
 
 /// view my quizzes \\\
 router.get('/user/:id', (req, res) => {
-  // const userId = req.session.userId;
-  const userId = 1;
+  const userId = req.cookies.user_id;
+  const name = req.cookies.name;
+
   db.getAllUserQuizzes(userId)
     .then(data => {
       const templateVars = {
-        quizzes: data
+        quizzes: data,
+        userID: userId,
+        name
       };
+      console.log(templateVars);
       res.render('user-profile', templateVars);
     })
     .catch(e => {
@@ -57,13 +62,18 @@ router.get('/user/:id', (req, res) => {
 
 //// Create a quiz \\\\
 router.get('/new', (req, res) => {
-  res.render('create-quiz');
+  const userID = req.cookies.user_id;
+  const templateVars = {
+    userID
+  };
+
+  res.render('create-quiz', templateVars);
 });
 
 router.post('/', (req, res) => {
   // Once login api added, owner_id needs to = userId
-  // const userId = req.session.userId;
-  db.createNewQuiz({...req.body, owner_id : 1})
+  const userId = req.cookies.user_id;
+  db.createNewQuiz({...req.body, owner_id : userId})
     .then(quiz => {
       console.log('quiz', quiz);
       const promises = [];
