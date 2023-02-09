@@ -55,6 +55,7 @@ router.post('/quiz_attempts', (req, res) => {
     .then(data => {
       console.log('Your quiz attempt:', data);
       let attemptID = data.id;
+      //redirect or render to results page (update once added)
       res.redirect(`/quizzes/quiz/${quizId}`);
     })
     .catch(e => {
