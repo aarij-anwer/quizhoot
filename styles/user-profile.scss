@@ -9,8 +9,11 @@
 
 .card-profile {
   display: flex;
-  flex-direction: column;
-  padding: 50px 30px;
+  flex-direction: row;
+  align-items: center;
+  padding: 30px;
+  padding-right: 50px;
+  padding-left: 50px;
   margin-bottom: 18px;
   background-color: $lightGrey;
   border-radius: 4px;
@@ -19,7 +22,7 @@
 .user-quizzes {
   display: flex;
   flex-direction: column;
-  padding: 50px 30px;
+  padding: 30px 30px;
   background-color: $backgroundColour;
   width: 65%;
   border-radius: 4px;

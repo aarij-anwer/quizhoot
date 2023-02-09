@@ -19,7 +19,6 @@
 }
 
 .nav-container button {
-
   padding: 0;
   border: none;
   background: none;
@@ -33,5 +32,8 @@
   text-decoration: none;
   font-size: 22px;
   font-weight: 500;
+}
 
+.nav-container button a:focus{
+  font-weight: 700;
 }

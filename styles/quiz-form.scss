@@ -7,6 +7,7 @@
   background-color: $white;
   width: 50%;
   border-radius: 4px;
+  margin-bottom: 50px;
 }
 
 .question {
@@ -23,23 +24,23 @@
   font-size: $questionTextFontSize;
 }
 
-.form-label {
-  padding-bottom: 20px;
-  font-size: $questionTextFontSize;
-}
+// .form-label {
+//   padding-bottom: 20px;
+//   font-size: $questionTextFontSize;
+// }
 
-.input-text {
-  height: 45px;
-  padding: 15px;
-  border-radius: 4px;
-  border-width: 1px;
-}
+// .input-text {
+//   height: 45px;
+//   padding: 15px;
+//   border-radius: 4px;
+//   border-width: 1px;
+// }
 
-.input-area {
-  padding: 15px;
-  border-radius: 4px;
-  border-width: 1px;
-}
+// .input-area {
+//   padding: 15px;
+//   border-radius: 4px;
+//   border-width: 1px;
+// }
 
 .step_1 {
   display: flex;
@@ -63,37 +64,37 @@
   max-width: 35%;
 }
 
-.secondary-button {
-  background-color: $darkGreen;
-  border-radius: 8px;
-  border-style: none;
-  color: $white;
-  cursor: pointer;
-  display: inline-block;
-  font-family: "Haas Grot Text R Web", "Helvetica Neue", Helvetica, Arial, sans-serif;
-  font-size: 14px;
-  font-weight: 500;
-  height: 40px;
-  width: fit-content;
-  line-height: 20px;
-  list-style: none;
-  margin: 0;
-  outline: none;
-  padding: 10px 16px;
-  position: right;
-  text-align: center;
-  text-decoration: none;
-  transition: color 100ms;
-  vertical-align: baseline;
-  user-select: none;
-  -webkit-user-select: none;
-  touch-action: manipulation;
-}
+// .secondary-button {
+//   background-color: $darkGreen;
+//   border-radius: 8px;
+//   border-style: none;
+//   color: $white;
+//   cursor: pointer;
+//   display: inline-block;
+//   font-family: "Haas Grot Text R Web", "Helvetica Neue", Helvetica, Arial, sans-serif;
+//   font-size: 14px;
+//   font-weight: 500;
+//   height: 40px;
+//   width: fit-content;
+//   line-height: 20px;
+//   list-style: none;
+//   margin: 0;
+//   outline: none;
+//   padding: 10px 16px;
+//   position: right;
+//   text-align: center;
+//   text-decoration: none;
+//   transition: color 100ms;
+//   vertical-align: baseline;
+//   user-select: none;
+//   -webkit-user-select: none;
+//   touch-action: manipulation;
+// }
 
-.secondary-button:hover,
-.secondary-button:focus {
-  background-color: $mediumGreen;
-}
+// .secondary-button:hover,
+// .secondary-button:focus {
+//   background-color: $mediumGreen;
+// }
 
 .hr {
   border: 1px solid $darkGreen;
@@ -101,9 +102,9 @@
   margin-right: 0;
 }
 
-.radio-answer {
-  padding-top: 20px;
-}
+// .radio-answer {
+  // padding-top: 20px;
+// }
 
 .share-link {
   display: flex;

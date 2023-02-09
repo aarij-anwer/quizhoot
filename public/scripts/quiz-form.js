@@ -29,19 +29,19 @@ $(() => {
     let $question = `
     <div class="question">
     <hr class="hr">
-    <br><br>
+    <br>
     <div class="question-header">
-      <label class="form-label">Question</label>
+      <label class="form-label question-title">Question</label>
       <button class="secondary-button btn-remove-question"
               type="button">Remove</button>
     </div>
-    <br><br>
+    <br>
     <input class="input-text"
            type="text"
            id="question"
            name="questions[${questionIndex}][question_text]"
            placeholder="Enter a question">
-    <br><br>
+    <br>
     <label class="form-label">First answer</label>
     <input class="input-text"
            type="text"
