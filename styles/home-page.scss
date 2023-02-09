@@ -36,27 +36,6 @@
   margin-top: 100px;
 }
 
-.card-quiz {
-  display: flex;
-  flex-direction: column;
-  padding: 50px 30px;
-  margin-bottom: 18px;
-  background-color: $backgroundColour;
-  border-radius: 4px;
-  }
-
-.card {
-display: flex;
-flex-direction: column;
-padding: 50px 30px;
-background-color: $white;
-border-radius: 4px;
-}
-
-.card-body h3 {
-  text-align: left;
-}
-
 .profile-img {
   width: 170px;
   height: 170px;
@@ -98,13 +77,31 @@ border-radius: 4px;
 .login-partial {
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  width: 90%;
 }
 
 .register-partial {
   display: none;
   flex-direction: column;
+  width: 90%;
+}
 
+.register-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: $lightGrey;
+  border-radius: 4px;
+  padding-top: 20px;
+  padding-bottom: 40px;
+  height: 120px;
+}
+
+.button-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
 }
 
 

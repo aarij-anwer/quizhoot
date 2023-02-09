@@ -1,12 +1,32 @@
 @import 'variables';
 
+.quiz-layout {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  width: 80%;
+}
+
 .new-quiz-form {
   display: flex;
   flex-direction: column;
-  padding: 50px 30px;
-  background-color: $white;
-  width: 50%;
+  padding: 30px 30px;
+  background-color: $backgroundColour;
+  width: 65%;
   border-radius: 4px;
+  margin-bottom: 50px;
+}
+
+.quiz-partial {
+  display: none;
+  flex-direction: column;
+  // align-items: center;
+  padding: 50px 30px;
+  background-color: $backgroundColour;
+  width: 30%;
+  border-radius: 4px;
+  margin-bottom: 50px;
+  height: fit-content;
 }
 
 .question {
@@ -23,35 +43,12 @@
   font-size: $questionTextFontSize;
 }
 
-.form-label {
-  padding-bottom: 20px;
-  font-size: $questionTextFontSize;
-}
-
-.input-text {
-  height: 45px;
-  padding: 15px;
-  border-radius: 4px;
-  border-width: 1px;
-}
-
-.input-area {
-  padding: 15px;
-  border-radius: 4px;
-  border-width: 1px;
-}
-
 .step_1 {
   display: flex;
   flex-direction: column;
 }
 
 .step_2 {
-  display: none;
-  flex-direction: column;
-}
-
-.step_3 {
   display: none;
   flex-direction: column;
 }
@@ -63,46 +60,10 @@
   max-width: 35%;
 }
 
-.secondary-button {
-  background-color: $darkGreen;
-  border-radius: 8px;
-  border-style: none;
-  color: $white;
-  cursor: pointer;
-  display: inline-block;
-  font-family: "Haas Grot Text R Web", "Helvetica Neue", Helvetica, Arial, sans-serif;
-  font-size: 14px;
-  font-weight: 500;
-  height: 40px;
-  width: fit-content;
-  line-height: 20px;
-  list-style: none;
-  margin: 0;
-  outline: none;
-  padding: 10px 16px;
-  position: right;
-  text-align: center;
-  text-decoration: none;
-  transition: color 100ms;
-  vertical-align: baseline;
-  user-select: none;
-  -webkit-user-select: none;
-  touch-action: manipulation;
-}
-
-.secondary-button:hover,
-.secondary-button:focus {
-  background-color: $mediumGreen;
-}
-
 .hr {
   border: 1px solid $darkGreen;
   margin-left: 0;
   margin-right: 0;
-}
-
-.radio-answer {
-  padding-top: 20px;
 }
 
 .share-link {
@@ -111,6 +72,12 @@
   align-items: center;
   justify-content: space-between;
   max-width: 40%;
+}
+
+.img-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 

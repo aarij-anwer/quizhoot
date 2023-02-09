@@ -6,6 +6,10 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+  <!-- Fonts -->
+  <script src="https://kit.fontawesome.com/2bfd122b18.js" crossorigin="anonymous"></script>
+  <style> @import url('https://fonts.googleapis.com/css2?family=Pacifico&display=swap');</style>
+
   <link rel="stylesheet" href="/vendor/normalize-4.1.1.css" />
   <link rel="stylesheet" href="/vendor/border-box.css" />
   <link rel="stylesheet" href="/styles/main.css" />
@@ -13,7 +17,6 @@
   <link rel="stylesheet" href="/styles/header.css" />
   <link rel="stylesheet" href="/styles/footer.css" />
   <link rel="stylesheet" href="/styles/home-page.css" />
-  <style> @import url('https://fonts.googleapis.com/css2?family=Pacifico&display=swap');</style>
 
   <script src="/vendor/jquery-3.0.0.js"></script>
   <script defer src="/scripts/app.js"></script>
@@ -35,11 +38,15 @@
           <% for (let quiz of quizzes) { %>
             <% if (!quiz.public) { %>
               <div class="card-quiz">
-                <div class="card-body">
-                  <h3 class="card-title"><%= quiz.title %></h3>
-                  <p class="card-text"><%= quiz.description %></p>
-                  <a href="/quizzes/quiz/<%= quiz.id %>" class="primary-button">View the Quiz</a>
-                </div>
+
+                  <img class="card-img" src="/docs/card_01.png" alt="card image">
+
+                  <div class="card-body">
+                    <h2 class="card-title"><%= quiz.title %></h2>
+                    <p class="card-text"><%= quiz.description %></p>
+                    <a href="/quizzes/quiz/<%= quiz.id %>" class="primary-button right-button">View the Quiz</a>
+                  </div>
+
               </div>
            <% } %>
           <% } %>

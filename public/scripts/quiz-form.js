@@ -28,20 +28,20 @@ $(() => {
   const addQuestion = function() {
     let $question = `
     <div class="question">
-    <hr class="hr">
-    <br><br>
+
+    <br>
     <div class="question-header">
-      <label class="form-label">Question</label>
+      <label class="form-label question-title">Question</label>
       <button class="secondary-button btn-remove-question"
               type="button">Remove</button>
     </div>
-    <br><br>
+    <br>
     <input class="input-text"
            type="text"
            id="question"
            name="questions[${questionIndex}][question_text]"
            placeholder="Enter a question">
-    <br><br>
+    <br>
     <label class="form-label">First answer</label>
     <input class="input-text"
            type="text"
@@ -90,7 +90,6 @@ $(() => {
     updateQuestionNum();
   };
 
-
   $('#btn-add-question').on('click', () => {
     addQuestion();
   });
@@ -100,6 +99,31 @@ $(() => {
     $(this).parents('.question').remove();
     questionIndex--;
     updateQuestionNum();
+  });
+
+  const $inputTitle = $('#title');
+  let $title = $('.side-quiz-title');
+  const $inputDescription = $('#description');
+  let $description = $('.side-quiz-description');
+
+  $('#new-quiz-form').on('input', '#title', function(e) {
+    let titleValue = $inputTitle.val();
+    $title.html(titleValue);
+  });
+
+  $('#new-quiz-form').on('input', '#description', function(e) {
+    let descriptionValue = $inputDescription.val();
+    $description.html(descriptionValue);
+  });
+
+  $('#btn-add-questions').on('click', () => {
+    $('.quiz-partial').css("display", "flex");
+    $('.quiz-layout').css("justify-content", "space-between");
+  });
+
+  $('#btn-back').on('click', () => {
+    $('.quiz-partial').css("display", "none");
+    $('.quiz-layout').css("justify-content", "center");
   });
 
   //submits to the quiz (originates before dynamic addition) commented out because of duplication
