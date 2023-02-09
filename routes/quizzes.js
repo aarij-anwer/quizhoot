@@ -4,7 +4,6 @@ const db = require('../db/queries/database');
 const { getUser } = require('../db/queries/users');
 const router  = express.Router();
 
-
 /// view all quizzes \\\
 router.get('/home', (req, res) => {
   const userId = req.cookies.user_id;
@@ -16,6 +15,7 @@ router.get('/home', (req, res) => {
         userID: userId,
         name
       };
+
       res.render('home-page', templateVars);
     })
     .catch(e => {

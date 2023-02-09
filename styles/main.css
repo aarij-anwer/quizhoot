@@ -6,7 +6,7 @@ h1 {
 }
 
 .title {
-  font-family: "Pacifico", cursive;
+  font-family: "Shrikhand", cursive;
   font-size: 48px;
   margin-bottom: 20px;
 }
@@ -99,7 +99,8 @@ p {
 }
 
 .form-label {
-  font-size: 17px;
+  font-size: 16px;
+  font-weight: 600;
   margin-bottom: 8px;
 }
 
@@ -109,6 +110,17 @@ p {
   border-radius: 4px;
   border-width: 1px;
   margin-bottom: 20px;
+}
+
+.input-area {
+  padding: 15px;
+  border-radius: 4px;
+  border-width: 1px;
+}
+
+.question-title {
+  font-size: 22px;
+  font-weight: 600;
 }
 
 .card-quiz {
@@ -135,6 +147,11 @@ p {
   width: 150px;
   height: 150px;
   margin-right: 30px;
+}
+
+.quiz-img {
+  width: 200px;
+  height: 200px;
 }
 
 main {
