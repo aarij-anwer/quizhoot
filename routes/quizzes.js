@@ -31,7 +31,7 @@ router.get('/quiz/:quiz_id', (req, res) => {
   const name = req.cookies.name;
   db.getQuizQuestionsById(quizId)
     .then(data => {
-      // console.log('data', data);
+      console.log('data', data);
       const templateVars = {
         quizzes: data,
         userID: userId,
@@ -43,6 +43,28 @@ router.get('/quiz/:quiz_id', (req, res) => {
       console.error(e);
       res.send(e);
     });
+});
+
+router.post('/quiz_attempts', (req, res) => {
+  const userId = req.cookies.user_id;
+  const quizId = req.query.quiz_id;
+  const answers = Object.values(req.body);
+
+
+  db.createQuizAttempt({answers, user_id : userId, quiz_id : quizId})
+    .then(data => {
+      console.log('Your quiz attempt:', data);
+      let attemptID = data.id;
+      res.redirect(`/quizzes/quiz/${quizId}`);
+    })
+    .catch(e => {
+      console.error(e);
+      res.send(e);
+    });
+
+
+  return router;
+
 });
 
 

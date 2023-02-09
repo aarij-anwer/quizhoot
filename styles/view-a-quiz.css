@@ -169,23 +169,6 @@ p {
   touch-action: manipulation;
 }
 
-.clipboard {
-  border: 0;
-  padding: 15px;
-  border-radius: 3px;
-  background-image: linear-gradient(135deg, #FDEB71 10%, #F8D800 100%);
-  cursor: pointer;
-  color: #04048c;
-  font-family: "Karla", sans-serif;
-  font-size: 16px;
-  position: relative;
-  top: 0;
-  transition: all 0.2s ease;
-}
-.clipboard:hover {
-  top: 2px;
-}
-
 p {
   font-weight: 700;
 }/*# sourceMappingURL=view-a-quiz.css.map */
