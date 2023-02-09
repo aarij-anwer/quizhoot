@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- Fonts -->
+  <script src="https://kit.fontawesome.com/2bfd122b18.js" crossorigin="anonymous"></script>
+  <style> @import url('https://fonts.googleapis.com/css2?family=Pacifico&display=swap');</style>
+
+  <link rel="stylesheet" href="/vendor/normalize-4.1.1.css" />
+  <link rel="stylesheet" href="/vendor/border-box.css" />
+  <link rel="stylesheet" href="/styles/main.css" />
+  <link rel="stylesheet" href="/styles/layout.css" />
+  <link rel="stylesheet" href="/styles/header.css" />
+  <link rel="stylesheet" href="/styles/footer.css" />
+  <link rel="stylesheet" href="/styles/view-a-quiz.css" />
+
+
+  <script src="/vendor/jquery-3.0.0.js"></script>
+  <script defer src="/scripts/app.js"></script>
+  <title>View Quiz</title>
+</head>
+
+<body>
+  <%- include('partials/_header') %>
+
+    <main>
+      <h1>Quiz Completed 🎉</h1>
+      <div class="quiz">
+        <h2>Your Score</h2>
+        <div style="
+                  display: flex;
+                  align-items: center;
+                  justify-content: center;
+                  padding: 50px 30px;
+                  font-size: 100px;
+              ">18 / 22
+        </div>
+        <div style="
+                  display: flex;
+                  justify-content: space-evenly;
+                  padding: 50px 30px;
+                  ">
+          <button class="primary-button">Share Your Results</button>
+          <button class="primary-button">Retake the Quiz</button>
+        </div>
+      </div>
+    </main>
+    <%- include('partials/_footer') %>
+</body>
+
+</html>
