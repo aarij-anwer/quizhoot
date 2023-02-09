@@ -103,7 +103,39 @@ const getUserAttempts = function(owner_id) {
       console.log(err.message);
     });
 };
+// quiz_id INTEGER REFERENCES quizzes(id),
+// user_id INTEGER REFERENCES users(id),
+// started_at TIMESTAMP NOT NULL,
+// finished_at TIMESTAMP NOT NULL,
+// total_score INTEGER NOT NULL
 
-module.exports = { createNewQuiz, addQuestion, getAllQuizzes, getQuizQuestionsById, getQuizTitle, getAllUserQuizzes, getUserTotalQuizzes, getUserAttempts };
+const createQuizAttempt = function(attempt) {
+  // console.log('attempt', attempt);
+  let filteredAnswers = attempt.answers.filter(x => x === 'true');
+  // console.log('filteredAnswers', filteredAnswers);
+  // console.log('filteredAnswers.length', filteredAnswers.length);
+
+  const date = new Date();
+  const startedAt = date.toUTCString();
+  return db
+    .query(`INSERT INTO quiz_attempts(quiz_id, user_id, started_at, finished_at, total_score) VALUES($1, $2, $3, $4, $5) RETURNING *`,
+      [attempt.quiz_id, attempt.user_id, startedAt, startedAt, filteredAnswers.length])
+    .then(data => {
+      return data.rows[0];
+    });
+};
+
+
+module.exports = {
+  createNewQuiz,
+  addQuestion,
+  getAllQuizzes,
+  getQuizQuestionsById,
+  getQuizTitle,
+  getAllUserQuizzes,
+  getUserTotalQuizzes,
+  getUserAttempts,
+  createQuizAttempt
+};
 
 

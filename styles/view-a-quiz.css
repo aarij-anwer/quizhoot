@@ -99,7 +99,8 @@ p {
 }
 
 .form-label {
-  font-size: 17px;
+  font-size: 16px;
+  font-weight: 600;
   margin-bottom: 8px;
 }
 
@@ -109,6 +110,17 @@ p {
   border-radius: 4px;
   border-width: 1px;
   margin-bottom: 20px;
+}
+
+.input-area {
+  padding: 15px;
+  border-radius: 4px;
+  border-width: 1px;
+}
+
+.question-title {
+  font-size: 22px;
+  font-weight: 600;
 }
 
 .card-quiz {
@@ -137,6 +149,11 @@ p {
   margin-right: 30px;
 }
 
+.quiz-img {
+  width: 200px;
+  height: 200px;
+}
+
 .quiz {
   display: flex;
   flex-direction: column;
@@ -146,6 +163,19 @@ p {
   border-radius: 4px;
 }
 
+#attempt-quiz-form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 1500px;
+}
+
+.title {
+  font-family: "Pacifico", cursive;
+  font-size: 48px;
+  margin-bottom: 20px;
+}
+
 .quiz-question {
   display: flex;
   flex-direction: row;
@@ -153,7 +183,7 @@ p {
   justify-content: space-between;
   padding-bottom: 8px;
   font-weight: 450;
-  font-size: 17px;
+  font-size: 16px;
 }
 
 .quiz, .choices {
@@ -192,4 +222,8 @@ p {
        user-select: none;
   -webkit-user-select: none;
   touch-action: manipulation;
+}
+
+p {
+  font-weight: 700;
 }/*# sourceMappingURL=view-a-quiz.css.map */
