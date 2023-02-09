@@ -17,7 +17,7 @@ $buttonTextColour: #fff;
 //font styles
 $bold: 600;
 $regular: 400;
-$questionTextFontSize: 17px;
+$questionTextFontSize: 16px;
 $questionTitleFontSize: 40px;
 $descriptionFontSize: 17px;
 
@@ -29,6 +29,13 @@ h1 {
   text-transform: uppercase;
 
 }
+
+.title {
+  font-family: 'Pacifico', cursive;
+  font-size: 48px;
+  margin-bottom: 20px;
+}
+
 h3 {
   color: $black;
   font-size: 20px;
@@ -36,6 +43,7 @@ h3 {
 p {
   color: $black;
   font-size: $descriptionFontSize;
+  line-height: 28px;
 }
 
 //Primary button styling
@@ -77,35 +85,29 @@ p {
 }
 
 .secondary-button {
-  background-color: $darkGreen;
-  border-radius: 8px;
-  border-style: none;
-  color: $white;
+  color: $black;
   cursor: pointer;
   display: inline-block;
   font-family: "Haas Grot Text R Web", "Helvetica Neue", Helvetica, Arial, sans-serif;
-  font-size: 14px;
-  font-weight: 500;
-  height: 40px;
+  font-size: 15px;
+  font-weight:600;
+  height: 30px;
   width: fit-content;
   line-height: 20px;
-  list-style: none;
-  margin: 0;
-  outline: none;
-  padding: 10px 16px;
-  position: right;
-  text-align: center;
-  text-decoration: none;
-  transition: color 100ms;
-  vertical-align: baseline;
-  user-select: none;
-  -webkit-user-select: none;
-  touch-action: manipulation;
+  padding: 0;
+  border: none;
+  background: none;
+  text-decoration: underline;
 }
 
 .secondary-button:hover,
 .secondary-button:focus {
-  background-color: $mediumGreen;
+  color: $greenBlack;
+}
+
+.right-button {
+  display: flex;
+  align-self: flex-end;
 }
 
 //Form styling
@@ -117,6 +119,7 @@ p {
 }
 .form-label {
   font-size: $questionTextFontSize;
+  font-weight: $bold;
   margin-bottom: 8px;
 }
 
@@ -126,4 +129,55 @@ p {
   border-radius: 4px;
   border-width: 1px;
   margin-bottom: 20px;
+}
+
+.input-area {
+  padding: 15px;
+  border-radius: 4px;
+  border-width: 1px;
+}
+
+.question-title {
+  font-size: 22px;
+  font-weight: 600;
+}
+
+// Quiz card styling
+.card-quiz {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding: 30px;
+  padding-right: 50px;
+  margin-bottom: 18px;
+  background-color: $backgroundColour;
+  border-radius: 4px;
+  }
+
+// .card {
+// display: flex;
+// flex-direction: column;
+// padding: 50px 30px;
+// background-color: $white;
+// border-radius: 4px;
+// }
+
+.card-body {
+  display: flex;
+  flex-direction: column;
+}
+
+.card-body h3 {
+  text-align: left;
+}
+
+.card-img {
+  width: 150px;
+  height: 150px;
+  margin-right: 30px;
+}
+
+.quiz-img {
+  width: 200px;
+  height: 200px;
 }

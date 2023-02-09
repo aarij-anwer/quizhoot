@@ -5,6 +5,12 @@ h1 {
   text-transform: uppercase;
 }
 
+.title {
+  font-family: "Pacifico", cursive;
+  font-size: 48px;
+  margin-bottom: 20px;
+}
+
 h3 {
   color: #000;
   font-size: 20px;
@@ -13,6 +19,7 @@ h3 {
 p {
   color: #000;
   font-size: 17px;
+  line-height: 28px;
 }
 
 .primary-button {
@@ -56,6 +63,80 @@ p {
   background-color: #52796f;
 }
 
+.secondary-button {
+  color: #000;
+  cursor: pointer;
+  display: inline-block;
+  font-family: "Haas Grot Text R Web", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 15px;
+  font-weight: 600;
+  height: 30px;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  line-height: 20px;
+  padding: 0;
+  border: none;
+  background: none;
+  text-decoration: underline;
+}
+
+.secondary-button:hover,
+.secondary-button:focus {
+  color: #2f3e46;
+}
+
+.right-button {
+  display: flex;
+  align-self: flex-end;
+}
+
+.login-form {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  border-radius: 4px;
+}
+
+.form-label {
+  font-size: 17px;
+  margin-bottom: 8px;
+}
+
+.input-text {
+  height: 45px;
+  padding: 15px;
+  border-radius: 4px;
+  border-width: 1px;
+  margin-bottom: 20px;
+}
+
+.card-quiz {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding: 30px;
+  padding-right: 50px;
+  margin-bottom: 18px;
+  background-color: #fff;
+  border-radius: 4px;
+}
+
+.card-body {
+  display: flex;
+  flex-direction: column;
+}
+
+.card-body h3 {
+  text-align: left;
+}
+
+.card-img {
+  width: 150px;
+  height: 150px;
+  margin-right: 30px;
+}
+
 .profile-layout {
   display: flex;
   flex-direction: row;
@@ -65,8 +146,11 @@ p {
 
 .card-profile {
   display: flex;
-  flex-direction: column;
-  padding: 50px 30px;
+  flex-direction: row;
+  align-items: center;
+  padding: 30px;
+  padding-right: 50px;
+  padding-left: 50px;
   margin-bottom: 18px;
   background-color: #cad2c5;
   border-radius: 4px;
@@ -75,7 +159,7 @@ p {
 .user-quizzes {
   display: flex;
   flex-direction: column;
-  padding: 50px 30px;
+  padding: 30px 30px;
   background-color: #fff;
   width: 65%;
   border-radius: 4px;
