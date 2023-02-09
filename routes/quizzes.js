@@ -114,5 +114,20 @@ router.post('/', (req, res) => {
 
 });
 
+/// view and attempt a single quiz\\\
+router.get('/results/:quiz_id', (req, res) => {
+  const quizID = req.params.quiz_id;
+  const userID = req.cookies.user_id;
+  const name = req.cookies.name;
+
+  const templateVars = {
+    quizID,
+    userID,
+    name
+  };
+
+  res.render('results', templateVars);
+
+});
 
 module.exports = router;
