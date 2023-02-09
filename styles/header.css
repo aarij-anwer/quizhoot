@@ -99,7 +99,8 @@ p {
 }
 
 .form-label {
-  font-size: 17px;
+  font-size: 16px;
+  font-weight: 600;
   margin-bottom: 8px;
 }
 
@@ -109,6 +110,17 @@ p {
   border-radius: 4px;
   border-width: 1px;
   margin-bottom: 20px;
+}
+
+.input-area {
+  padding: 15px;
+  border-radius: 4px;
+  border-width: 1px;
+}
+
+.question-title {
+  font-size: 22px;
+  font-weight: 600;
 }
 
 .card-quiz {
@@ -148,6 +160,7 @@ p {
   height: 100px;
   background-color: #fff;
   position: fixed;
+  z-index: 1;
 }
 
 .logo-img {

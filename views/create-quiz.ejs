@@ -31,70 +31,64 @@
     <main>
       <h1>Create a Quiz</h1>
       <br><br>
-      <form action ="/quizzes" method="POST" id="new-quiz-form" class="new-quiz-form">
-        <div class="step_1">
-          <label class="form-label">Quiz title</label>
-          <input class="input-text"
-                 type="text"
-                 id="title"
-                 name="title"
-                 placeholder="Enter a title">
-          <br><br>
-          <label class="form-label">Description</label>
-          <textarea
-            class="input-area"
-            type="text"
-            id="description"
-            name="description"
-            placeholder="Enter a description"></textarea>
-          <br><br>
-          <label class="form-label">Privacy</label>
-          <div class="privacy">
-            <div>
-              <input type="radio" id="public" name="public" value="1" checked="checked">
-              <label for="public">Public</label><br>
-
+      <div class="quiz-layout">
+        <form action ="/quizzes" method="POST" id="new-quiz-form" class="new-quiz-form">
+          <div class="step_1">
+            <label class="form-label">Quiz title</label>
+            <input class="input-text"
+                  type="text"
+                  id="title"
+                  name="title"
+                  placeholder="Enter a title">
+            <br><br>
+            <label class="form-label">Description</label>
+            <textarea
+              class="input-area"
+              type="text"
+              id="description"
+              name="description"
+              placeholder="Enter a description"></textarea>
+            <br><br>
+            <label class="form-label">Privacy</label>
+            <div class="privacy">
+              <div>
+                <input type="radio" id="public" name="public" value="1" checked="checked">
+                <label for="public">Public</label><br>
+              </div>
+              <div>
+                <input type="radio" id="public" name="public" value="0">
+                <label for="private">Private</label>
+              </div>
             </div>
-            <div>
-              <input type="radio" id="public" name="public" value="0">
-              <label for="private">Private</label>
-            </div>
+            <br><br>
+            <hr class="hr">
+            <br><br>
+            <button class="secondary-button"
+                    id="btn-add-questions"
+                    type="button">Add questions</button>
           </div>
-          <br><br>
-          <hr class="hr">
-          <br><br>
-          <button class="secondary-button"
-                  id="btn-add-questions"
-                  type="button">Add questions</button>
-        </div>
 
-        <div class="step_2">
-          <button class="secondary-button"
-                  id="btn-back"
-                  type="button">Back to information</button>
-
-          <div class="questions-container"></div>
-          <button class="secondary-button"
-                  id="btn-add-question"
-                  type="button">Add a question</button>
-          <br><br>
-          <hr class="hr">
-          <br><br>
-          <button class="primary-button right-button" type="submit">Submit the quiz</button>
-        </div>
-        <div class="step_3">
-          <label class="form-label">Share with your friends</label>
-          <br><br>
-          <div class="share-link">
-            <label>URL to replace by dynamic link</label>
-            <button class="secondary-button"><i class="fa-regular fa-copy"></i></button>
+          <div class="step_2">
+            <!-- <button class="secondary-button"
+                    id="btn-back"
+                    type="button">Back to information</button> -->
+            <div class="questions-container"></div>
+            <button class="secondary-button"
+                    id="btn-add-question"
+                    type="button">Add a question</button>
+            <br><br>
+            <hr class="hr">
+            <br><br>
+            <button class="primary-button right-button" type="submit">Submit the quiz</button>
           </div>
-          <br><br>
-          <hr class="hr">
-          <br><br>
-          <button class="primary-button" type="button">Go to the quiz page</button>
-          <br><br>
-      </form>
+
+
+
+        </form>
+        <div class="quiz-partial">
+          <%- include('partials/_quiz-description') %>
+        </div>
+      </div>
     </main>
     <%- include('partials/_footer') %>
 </body>

@@ -99,7 +99,8 @@ p {
 }
 
 .form-label {
-  font-size: 17px;
+  font-size: 16px;
+  font-weight: 600;
   margin-bottom: 8px;
 }
 
@@ -148,14 +149,34 @@ p {
   margin-right: 30px;
 }
 
+.quiz-layout {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  width: 80%;
+}
+
 .new-quiz-form {
   display: flex;
   flex-direction: column;
-  padding: 50px 30px;
+  padding: 30px 30px;
   background-color: #fff;
-  width: 50%;
+  width: 65%;
   border-radius: 4px;
   margin-bottom: 50px;
+}
+
+.quiz-partial {
+  display: none;
+  flex-direction: column;
+  padding: 50px 30px;
+  background-color: #fff;
+  width: 30%;
+  border-radius: 4px;
+  margin-bottom: 50px;
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
 }
 
 .question {
@@ -169,7 +190,7 @@ p {
   flex-direction: row;
   align-items: center;
   justify-content: space-between;
-  font-size: 17px;
+  font-size: 16px;
 }
 
 .step_1 {
@@ -178,11 +199,6 @@ p {
 }
 
 .step_2 {
-  display: none;
-  flex-direction: column;
-}
-
-.step_3 {
   display: none;
   flex-direction: column;
 }
@@ -206,4 +222,10 @@ p {
   align-items: center;
   justify-content: space-between;
   max-width: 40%;
+}
+
+.img-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }/*# sourceMappingURL=quiz-form.css.map */
