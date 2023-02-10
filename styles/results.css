@@ -158,6 +158,7 @@ p {
   flex-direction: row;
   align-items: flex-start;
   margin: 50px;
+  padding-top: 20px;
 }
 
 h2 {
@@ -169,8 +170,9 @@ h2 {
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 50px 30px;
+  padding: 35px 30px;
   font-size: 100px;
+  font-family: "Shrikhand";
 }
 
 .score-card {
@@ -181,7 +183,7 @@ h2 {
 }
 
 .card-quiz {
-  margin: 50px;
+  margin: 25px;
   width: 600px;
 }
 
@@ -191,5 +193,9 @@ h2 {
   padding: 30px;
   width: 500px;
   border-radius: 4px;
-  margin: 50px;
+  margin: 25px;
+}
+
+.card-title {
+  padding-bottom: 17px;
 }/*# sourceMappingURL=results.css.map */

@@ -33,7 +33,7 @@ router.get('/quiz/:quiz_id', (req, res) => {
       res.send(e);
     });
 });
-
+/// post a quiz attempt\\\
 router.post('/quiz_attempts', (req, res) => {
   const userId = req.cookies.user_id;
   const quizId = req.query.quiz_id;
@@ -78,6 +78,7 @@ router.get('/new', (req, res) => {
   res.render('create-quiz');
 });
 
+//Post quiz creation
 router.post('/', (req, res) => {
   // Once login api added, owner_id needs to = userId
   const userId = req.cookies.user_id;
@@ -104,19 +105,14 @@ router.post('/', (req, res) => {
 
 });
 
-/// view and attempt a single quiz\\\
+/// view your quiz result\\\
 router.get('/results/:attempt_id', (req, res) => {
   const attemptID = req.params.attempt_id;
-  const userID = req.cookies.user_id;
-  const name = req.cookies.name;
-
 
   db.getQuizResults(attemptID)
     .then(quizzes => {
       const templateVars = {
-        quizzes,
-        userID,
-        name
+        quizzes
       };
       console.log(templateVars);
       res.render('results', templateVars);
@@ -125,7 +121,6 @@ router.get('/results/:attempt_id', (req, res) => {
       console.error(e);
       res.send(e);
     });
-
 
 });
 
