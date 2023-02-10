@@ -43,7 +43,7 @@ router.post('/quiz_attempts', (req, res) => {
     .then(data => {
       let attemptID = data.id;
       //redirect or render to results page (update once added)
-      res.redirect(`/quizzes/quiz/${quizId}`);
+      res.redirect(`/quizzes/results/${attemptID}`);
     })
     .catch(e => {
       console.error(e);
@@ -104,5 +104,29 @@ router.post('/', (req, res) => {
 
 });
 
+/// view and attempt a single quiz\\\
+router.get('/results/:attempt_id', (req, res) => {
+  const attemptID = req.params.attempt_id;
+  const userID = req.cookies.user_id;
+  const name = req.cookies.name;
+
+
+  db.getQuizResults(attemptID)
+    .then(quizzes => {
+      const templateVars = {
+        quizzes,
+        userID,
+        name
+      };
+      console.log(templateVars);
+      res.render('results', templateVars);
+    })
+    .catch(e => {
+      console.error(e);
+      res.send(e);
+    });
+
+
+});
 
 module.exports = router;
