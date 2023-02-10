@@ -100,6 +100,18 @@ const getUserAttempts = function(owner_id) {
     });
 };
 
+const getQuizResults = function(id) {
+  return db.query(
+    `SELECT quizzes.id AS quiz_id, quizzes.title, quizzes.description, quizzes.total_questions, quiz_attempts.id as attempt_id, quiz_attempts.total_score
+    FROM quizzes
+    JOIN quiz_attempts ON quizzes.id = quiz_attempts.quiz_id
+    WHERE quiz_attempts.id = $1
+    GROUP BY quizzes.id, quiz_attempts.id;`, [id])
+    .then((response) => {
+      return response.rows;
+    });
+};
+
 const createQuizAttempt = function(attempt) {
   let filteredAnswers = attempt.answers.filter(x => x === 'true');
   const date = new Date();
@@ -112,7 +124,6 @@ const createQuizAttempt = function(attempt) {
     });
 };
 
-
 module.exports = {
   createNewQuiz,
   addQuestion,
@@ -122,7 +133,8 @@ module.exports = {
   getAllUserQuizzes,
   getUserTotalQuizzes,
   getUserAttempts,
-  createQuizAttempt
+  createQuizAttempt,
+  getQuizResults
 };
 
 

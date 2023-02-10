@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- Fonts -->
+  <script src="https://kit.fontawesome.com/2bfd122b18.js" crossorigin="anonymous"></script>
+  <style> @import url('https://fonts.googleapis.com/css2?family=Pacifico&display=swap');</style>
+
+  <link rel="stylesheet" href="/vendor/normalize-4.1.1.css" />
+  <link rel="stylesheet" href="/vendor/border-box.css" />
+  <link rel="stylesheet" href="/styles/main.css" />
+  <link rel="stylesheet" href="/styles/layout.css" />
+  <link rel="stylesheet" href="/styles/header.css" />
+  <link rel="stylesheet" href="/styles/footer.css" />
+  <link rel="stylesheet" href="/styles/view-a-quiz.css" />
+
+
+  <script src="/vendor/jquery-3.0.0.js"></script>
+  <script defer src="/scripts/app.js"></script>
+  <title>View Quiz</title>
+</head>
+
+<body>
+  <%- include('partials/_header') %>
+
+    <main>
+      <h1>Quiz Completed 🎉</h1>
+      <div style="
+                display: flex;
+                flex-direction: row;
+                align-items: flex-start;
+                margin: 50px;
+                ">
+        <div class="quiz" style="margin: 50px">
+          <h2 style="margin: 0px; padding: 0px;">Your Score</h2>
+          <div style="
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          justify-content: center;">
+          <div style="
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    padding: 50px 30px;
+                    font-size: 100px;
+                "><%= quizzes[0].total_score %> / <%= quizzes[0].total_questions %>
+          </div>
+          <button variant="contained" class="primary-button" size="large" onClick="navigator.clipboard.writeText(window.location.href);this.insertAdjacentHTML('afterend', '<div class=linktooltips-container style=padding:10px;>Link Copied!</div>');setTimeout(() => { document.querySelectorAll('.linktooltips-container').forEach(el => el.remove());}, 3000);" >Share Your Results</button>
+        </div>
+        </div>
+        <div class="quiz" style="margin: 50px">
+          <h2 style="margin: 0px; padding: 0px;"><%= quizzes[0].title %></h1>
+          <p><%= quizzes[0].description %></p>
+          <form method="get" action="/quizzes/quiz/<%= quizzes[0].quiz_id %>">
+            <button class="primary-button" type="submit">Retake the Quiz</button>
+          </form>
+        </div>
+      </div>
+    </main>
+    <%- include('partials/_footer') %>
+</body>
+
+</html>
