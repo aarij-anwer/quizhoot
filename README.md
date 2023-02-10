@@ -52,6 +52,7 @@ Built as a midterm project for Lighthouse Labs. QUIZHOOT is an app that lets you
 ## Future Possibilities:
 - Edit/delete a created quiz
 - Further error handling
+- See your past quiz attempts on the profile page
 
 
 ### Created by:
