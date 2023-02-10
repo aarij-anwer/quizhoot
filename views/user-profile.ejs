@@ -32,7 +32,19 @@
       <br><br>
       <div class="profile-layout">
         <div class="user-quizzes">
-          <h2 class="title">Private Quizzes</h2>
+          <% if (quizzes.length === 0) { %>
+            <div class="no-quiz-container">
+              <img class="no-quiz-img" src="/docs/brainstorm.png" alt="brainstorm image">
+              <div class="cta">
+                <h2>You haven't created any quiz yet!</h2>
+                <br>
+                <button class="primary-button"><a href="/quizzes/new">Go create your first quiz</a></button>
+              </div>
+            </div>
+            <% } %>
+            <%if (quizzes.length > 0) { %>
+              <h2 class="title">Private Quizzes</h2>
+            <% } %>
           <div class="private-quiz-container">
             <% for (let quiz of quizzes) { %>
               <% if (!quiz.public) { %>
@@ -46,7 +58,9 @@
              <% } %>
             <% } %>
           </div>
+          <% if (quizzes.length > 0) { %>
           <h2 class="title">Public Quizzes</h2>
+          <% } %>
           <div class="public-quiz-container"></div>
            <% for (let quiz of quizzes) { %>
             <% if (quiz.public) { %>
@@ -77,7 +91,9 @@
           <br><br>
           <div class="average-score">
             <label class="score"><%= attempts.avg_score %></label>
+            <% if (quizzes.length > 0) { %>
             <h3 class="avg">Average Score</h3>
+            <% } %>
           </div>
         </div>
       </div>
