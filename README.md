@@ -49,6 +49,11 @@ Built as a midterm project for Lighthouse Labs. QUIZHOOT is an app that lets you
 
 - Nodemon
 
+## Future Possibilities:
+- Edit/delete a created quiz
+- Further error handling
+
+
 ### Created by:
 - Rebecca Kurtis
 - Anne-Marie Champoux
