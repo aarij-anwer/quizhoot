@@ -79,3 +79,21 @@
   font-weight: 800;
 }
 
+.no-quiz-container {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.cta {
+  margin-left: 20px;
+  margin-right: 20px;
+
+}
+
+.no-quiz-img {
+  height: 400px;
+  width: 400px;
+  margin: 20px;
+}
+
