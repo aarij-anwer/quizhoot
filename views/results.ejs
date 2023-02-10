@@ -7,9 +7,11 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <!-- Fonts -->
+  <!-- Fonts/External CSS -->
   <script src="https://kit.fontawesome.com/2bfd122b18.js" crossorigin="anonymous"></script>
-  <style> @import url('https://fonts.googleapis.com/css2?family=Pacifico&display=swap');</style>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Pacifico&display=swap');
+  </style>
 
   <link rel="stylesheet" href="/vendor/normalize-4.1.1.css" />
   <link rel="stylesheet" href="/vendor/border-box.css" />
@@ -17,14 +19,13 @@
   <link rel="stylesheet" href="/styles/layout.css" />
   <link rel="stylesheet" href="/styles/header.css" />
   <link rel="stylesheet" href="/styles/footer.css" />
-  <!-- <link rel="stylesheet" href="/styles/view-a-quiz.css" /> -->
   <link rel="stylesheet" href="/styles/results.css" />
 
 
 
   <script src="/vendor/jquery-3.0.0.js"></script>
   <script defer src="/scripts/app.js"></script>
-  <title>View Quiz</title>
+  <title>Results Page</title>
 </head>
 
 <body>
@@ -36,27 +37,27 @@
         <div class="card-quiz score-card-body">
           <h2>Your Score</h2>
           <div class="score-card">
-          <div class="score-portion"><%= quizzes[0].total_score %> / <%= quizzes[0].total_questions %>
+            <article class="score-portion">
+              <%= quizzes[0].total_score %> / <%= quizzes[0].total_questions %>
+            </article>
+            <button variant="contained" class="primary-button" size="large"
+              onClick="navigator.clipboard.writeText(window.location.href);this.insertAdjacentHTML('afterend', '<div class=linktooltips-container style=padding:10px;>Link Copied!</div>');setTimeout(() => { document.querySelectorAll('.linktooltips-container').forEach(el => el.remove());}, 3000);">Share
+              Your Results</button>
           </div>
-          <button variant="contained" class="primary-button" size="large" onClick="navigator.clipboard.writeText(window.location.href);this.insertAdjacentHTML('afterend', '<div class=linktooltips-container style=padding:10px;>Link Copied!</div>');setTimeout(() => { document.querySelectorAll('.linktooltips-container').forEach(el => el.remove());}, 3000);" >Share Your Results</button>
-        </div>
         </div>
         <div class="card-quiz">
           <img class="card-img" id="random-img" src="/docs/card_04.png " alt="card image">
           <div class="card-body">
-            <h2 class="card-title"><%= quizzes[0].title %></h2>
-            <p class="card-text"><%= quizzes[0].description %></p>
+            <h2 class="card-title">
+              <%= quizzes[0].title %>
+            </h2>
+            <p class="card-text">
+              <%= quizzes[0].description %>
+            </p>
             <a href="/quizzes/quiz/<%= quizzes[0].quiz_id %>" class="primary-button right-button">Retake the Quiz</a>
           </div>
 
-      </div>
-        <!-- <div class="score-card-body" style="margin: 50px">
-          <h2><%= quizzes[0].title %></h2>
-          <p><%= quizzes[0].description %></p>
-          <form method="get" action="/quizzes/quiz/<%= quizzes[0].quiz_id %>">
-            <button class="primary-button" type="submit">Retake the Quiz</button>
-          </form>
-        </div> -->
+        </div>
       </div>
     </main>
     <%- include('partials/_footer') %>
