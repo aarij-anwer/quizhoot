@@ -2,9 +2,10 @@
 const db = require('../connection');
 
 const createNewQuiz = function(quiz) {
+  console.log('quiz', quiz);
   return db
     .query(`INSERT INTO quizzes(owner_id, title, description, public, total_questions) VALUES($1, $2, $3, $4, $5) RETURNING *`,
-      [quiz.owner_id, quiz.title, quiz.description,quiz.public, 3])
+      [quiz.owner_id, quiz.title, quiz.description,quiz.public, quiz.questions.length])
     .then(data => {
       return data.rows[0];
     });
