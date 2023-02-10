@@ -30,23 +30,34 @@
 
     <main>
       <h1>Quiz Completed 🎉</h1>
-      <div class="quiz">
-        <h2>Your Score</h2>
-        <div style="
-                  display: flex;
-                  align-items: center;
-                  justify-content: center;
-                  padding: 50px 30px;
-                  font-size: 100px;
-              ">18 / 22
+      <div style="
+                display: flex;
+                flex-direction: row;
+                align-items: flex-start;
+                margin: 50px;
+                ">
+        <div class="quiz" style="margin: 50px">
+          <h2>Your Score</h2>
+          <div style="
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    padding: 50px 30px;
+                    font-size: 100px;
+                "><%= quizzes[0].total_score %> / <%= quizzes[0].total_questions %>
+          </div>
+          <div style="
+                    display: flex;
+                    justify-content: space-evenly;
+                    padding: 50px 30px;
+                    ">
+            <button class="primary-button">Share Your Results</button>
+            <button class="primary-button">Retake the Quiz</button>
+          </div>
         </div>
-        <div style="
-                  display: flex;
-                  justify-content: space-evenly;
-                  padding: 50px 30px;
-                  ">
-          <button class="primary-button">Share Your Results</button>
-          <button class="primary-button">Retake the Quiz</button>
+        <div class="quiz" style="margin: 50px">
+          <h2><%= quizzes[0].title %></h1>
+          <p><%= quizzes[0].description %></p>
         </div>
       </div>
     </main>

@@ -120,13 +120,21 @@ router.get('/results/:quiz_id', (req, res) => {
   const userID = req.cookies.user_id;
   const name = req.cookies.name;
 
-  const templateVars = {
-    quizID,
-    userID,
-    name
-  };
 
-  res.render('results', templateVars);
+  db.getQuizResults(quizID)
+    .then(quizzes => {
+      const templateVars = {
+        quizzes,
+        userID,
+        name
+      };
+      res.render('results', templateVars);
+    })
+    .catch(e => {
+      console.error(e);
+      res.send(e);
+    });
+
 
 });
 

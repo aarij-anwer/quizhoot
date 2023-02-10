@@ -104,6 +104,18 @@ const getUserAttempts = function(owner_id) {
     });
 };
 
-module.exports = { createNewQuiz, addQuestion, getAllQuizzes, getQuizQuestionsById, getQuizTitle, getAllUserQuizzes, getUserTotalQuizzes, getUserAttempts };
+const getQuizResults = function(id) {
+  return db.query(
+    `SELECT quizzes.id AS quizID, quizzes.title, quizzes.description, quizzes.total_questions, quiz_attempts.id as attemptID, quiz_attempts.total_score
+    FROM quizzes
+    JOIN quiz_attempts ON quizzes.id = quiz_attempts.quiz_id
+    WHERE quizzes.id = $1
+    GROUP BY quizzes.id, quiz_attempts.id;`, [id])
+    .then((response) => {
+      return response.rows;
+    });
+};
+
+module.exports = { createNewQuiz, addQuestion, getAllQuizzes, getQuizQuestionsById, getQuizTitle, getAllUserQuizzes, getUserTotalQuizzes, getUserAttempts, getQuizResults };
 
 
