@@ -18,7 +18,7 @@ router.get('/home', (req, res) => {
     });
 });
 
-/// view and attempt a single quiz\\\
+/// view and attempt a single quiz \\\
 router.get('/quiz/:quiz_id', (req, res) => {
   const quizId = req.params.quiz_id;
   db.getQuizQuestionsById(quizId)
@@ -60,6 +60,7 @@ router.get('/user/:id', (req, res) => {
   };
   db.getAllUserQuizzes(userId)
     .then(data => {
+
       templateVars ["quizzes"] = data;
       return db.getUserTotalQuizzes(userId);
     })

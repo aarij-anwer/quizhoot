@@ -89,7 +89,7 @@ const getUserTotalQuizzes = function(owner_id) {
 const getUserAttempts = function(owner_id) {
   return db
     .query(
-      `SELECT count(quiz_attempts.*) as total_attempts, avg(ROUND(total_score)) as avg_score
+      `SELECT count(quiz_attempts.*) as total_attempts, ROUND(avg(total_score),2) as avg_score
       FROM quiz_attempts JOIN users ON users.id = user_id
       WHERE quiz_attempts.user_id = $1;
       `,[owner_id])

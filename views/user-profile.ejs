@@ -42,9 +42,11 @@
               </div>
             </div>
             <% } %>
-            <%if (quizzes.length > 0) { %>
-              <h2 class="title">Private Quizzes</h2>
-            <% } %>
+
+              <% if (quizzes.length > 0) { %>
+                <h2 class="title">Private Quizzes</h2>
+              <% } %>
+
           <div class="private-quiz-container">
             <% for (let quiz of quizzes) { %>
               <% if (!quiz.public) { %>
@@ -58,9 +60,11 @@
              <% } %>
             <% } %>
           </div>
+
           <% if (quizzes.length > 0) { %>
-          <h2 class="title">Public Quizzes</h2>
+            <h2 class="title">Public Quizzes</h2>
           <% } %>
+
           <div class="public-quiz-container"></div>
            <% for (let quiz of quizzes) { %>
             <% if (quiz.public) { %>
