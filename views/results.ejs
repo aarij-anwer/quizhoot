@@ -51,7 +51,7 @@
                     font-size: 100px;
                 "><%= quizzes[0].total_score %> / <%= quizzes[0].total_questions %>
           </div>
-          <button variant="contained" class="primary-button" size="large" onClick="navigator.clipboard.writeText(window.location.href);this.insertAdjacentHTML('afterend', '<div class=linktooltips-container>Link Copied!</div>');setTimeout(() => { document.querySelectorAll('.linktooltips-container').forEach(el => el.remove());}, 3000);" >Share Your Results</button>
+          <button variant="contained" class="primary-button" size="large" onClick="navigator.clipboard.writeText(window.location.href);this.insertAdjacentHTML('afterend', '<div class=linktooltips-container style=padding:10px;>Link Copied!</div>');setTimeout(() => { document.querySelectorAll('.linktooltips-container').forEach(el => el.remove());}, 3000);" >Share Your Results</button>
         </div>
         </div>
         <div class="quiz" style="margin: 50px">
