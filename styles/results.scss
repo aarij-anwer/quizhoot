@@ -1,0 +1,48 @@
+@import 'variables';
+
+.results-page {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  margin: 50px;
+}
+
+h2 {
+  margin: 0px;
+  padding: 0px;
+}
+
+
+.score-portion {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 50px 30px;
+  font-size: 100px;
+}
+
+.score-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+}
+
+.card-quiz {
+  margin: 50px;
+  width: 600px;
+}
+
+.score-card-body {
+  display: flex;
+  flex-direction: column;
+  padding: 30px;
+  // background-color: $white;
+  // width: 40%;
+  width: 500px;
+  // height: 350px;
+  border-radius: 4px;
+  margin: 50px;
+}
+
