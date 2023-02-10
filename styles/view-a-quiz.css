@@ -1,13 +1,12 @@
 h1 {
-  color: #fff;
-  font-size: 40px;
+  color: #000;
+  font-size: 48px;
   font-weight: 600;
-  text-transform: uppercase;
 }
 
 .title {
   font-family: "Shrikhand", cursive;
-  font-size: 48px;
+  font-size: 36px;
   margin-bottom: 20px;
 }
 
@@ -154,10 +153,16 @@ p {
   height: 200px;
 }
 
+main {
+  background-image: url("/docs/quiz_bg.png");
+  background-repeat: no-repeat;
+  background-position: 100px 130px;
+}
+
 .quiz {
   display: flex;
   flex-direction: column;
-  padding: 50px 30px;
+  padding: 30px;
   background-color: #fff;
   width: 50%;
   border-radius: 4px;
@@ -170,20 +175,18 @@ p {
   width: 1500px;
 }
 
-.title {
-  font-family: "Pacifico", cursive;
-  font-size: 48px;
-  margin-bottom: 20px;
-}
-
 .quiz-question {
   display: flex;
   flex-direction: row;
   align-items: center;
   justify-content: space-between;
-  padding-bottom: 8px;
-  font-weight: 450;
-  font-size: 16px;
+  font-weight: 800;
+  font-size: 22px;
+  line-height: 28px;
+}
+
+ul {
+  padding-left: 0px;
 }
 
 .quiz, .choices {
@@ -191,7 +194,7 @@ p {
 }
 
 .choices li {
-  padding-top: 3px;
+  padding-top: 18px;
   font-size: 15.5px;
 }
 
@@ -225,5 +228,21 @@ p {
 }
 
 p {
-  font-weight: 700;
+  font-size: 17px;
+  line-height: 28px;
+  font-weight: 600;
+  text-align: center;
+}
+
+.quiz-header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 40%;
+}
+
+.quiz-description {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }/*# sourceMappingURL=view-a-quiz.css.map */

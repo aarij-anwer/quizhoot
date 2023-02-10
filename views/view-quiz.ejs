@@ -35,24 +35,26 @@
   <%- include('partials/_header') %>
 
     <main>
-      <h1><%= quizzes[0].title %></h1>
-      <p><%= quizzes[0].description %></p>
-
+      <div class="quiz-header">
+        <h1 class="quiz-title"><%= quizzes[0].title %></h1>
+        <p class="quiz-description"><%= quizzes[0].description %></p>
+        <br>
+        <Button variant="contained" class="primary-button" size="large" onClick="navigator.clipboard.writeText(window.location.href);this.insertAdjacentHTML('afterend', '<div class=linktooltips-container>Link Copied!</div>');setTimeout(() => { document.querySelectorAll('.linktooltips-container').forEach(el => el.remove()); }, 3000);"> Share quiz with your friends! </Button>
+        <br>
+      </div>
 
       <% for (let quiz of quizzes) { %>
         <form action ="/quizzes/quiz_attempts?quiz_id=<%= quizzes[0].quizid %>" method="POST" id="attempt-quiz-form">
-
-
           <Ul class="quiz">
             <Li>
-              <H4 class="quiz-question">
+              <h2 class="quiz-question">
                 <%= quiz.question_text %>
-              </H4>
+              </h2>
+
               <Ul class="choices">
                 <Li>
-                  <Label><Input type="Radio" name="<%= quiz.id %>" value="<%= quiz.option_1 === quiz.correct_answer %>" /><Span>
-                      <%= quiz.option_1 %>
-                    </Span></Label>
+                  <input type="Radio" id="option1" name="<%= quiz.id %>" value="<%= quiz.option_1 === quiz.correct_answer %>" />
+                  <label for="option1"><%= quiz.option_1 %></label>
                 </Li>
                 <Li>
                   <Label><Input type="Radio" name="<%= quiz.id %>" value="<%= quiz.option_2 === quiz.correct_answer %>" /><Span>
@@ -68,14 +70,10 @@
             </Li>
           </Ul>
           <% } %>
-
-            <Button class="view-results" type="submit" >Submit</Button>
+           <br>
+           <Button class="primary-button" type="submit">Submit your answers</Button>
+           <br><br>
           </form>
-
-            <br><br>
-            <Button variant="contained" class="primary-button" size="large" onClick="navigator.clipboard.writeText(window.location.href);this.insertAdjacentHTML('afterend', '<div class=linktooltips-container>Link Copied!</div>');setTimeout(() => { document.querySelectorAll('.linktooltips-container').forEach(el => el.remove()); }, 3000);"> Share Quiz With Your Friends! </Button>
-     <br><br>
-
     </main>
     <%- include('partials/_footer') %>
 </body>
