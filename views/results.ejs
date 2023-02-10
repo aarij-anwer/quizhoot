@@ -37,7 +37,12 @@
                 margin: 50px;
                 ">
         <div class="quiz" style="margin: 50px">
-          <h2>Your Score</h2>
+          <h2 style="margin: 0px; padding: 0px;">Your Score</h2>
+          <div style="
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          justify-content: center;">
           <div style="
                     display: flex;
                     align-items: center;
@@ -46,18 +51,15 @@
                     font-size: 100px;
                 "><%= quizzes[0].total_score %> / <%= quizzes[0].total_questions %>
           </div>
-          <div style="
-                    display: flex;
-                    justify-content: space-evenly;
-                    padding: 50px 30px;
-                    ">
-            <button class="primary-button">Share Your Results</button>
-            <button class="primary-button">Retake the Quiz</button>
-          </div>
+          <button variant="contained" class="primary-button" size="large" onClick="navigator.clipboard.writeText(window.location.href);this.insertAdjacentHTML('afterend', '<div class=linktooltips-container>Link Copied!</div>');setTimeout(() => { document.querySelectorAll('.linktooltips-container').forEach(el => el.remove());}, 3000);" >Share Your Results</button>
+        </div>
         </div>
         <div class="quiz" style="margin: 50px">
-          <h2><%= quizzes[0].title %></h1>
+          <h2 style="margin: 0px; padding: 0px;"><%= quizzes[0].title %></h1>
           <p><%= quizzes[0].description %></p>
+          <form method="get" action="/quizzes/quiz/<%= quizzes[0].quiz_id %>">
+            <button class="primary-button" type="submit">Retake the Quiz</button>
+          </form>
         </div>
       </div>
     </main>

@@ -115,19 +115,20 @@ router.post('/', (req, res) => {
 });
 
 /// view and attempt a single quiz\\\
-router.get('/results/:quiz_id', (req, res) => {
-  const quizID = req.params.quiz_id;
+router.get('/results/:attempt_id', (req, res) => {
+  const attemptID = req.params.attempt_id;
   const userID = req.cookies.user_id;
   const name = req.cookies.name;
 
 
-  db.getQuizResults(quizID)
+  db.getQuizResults(attemptID)
     .then(quizzes => {
       const templateVars = {
         quizzes,
         userID,
         name
       };
+      console.log(templateVars);
       res.render('results', templateVars);
     })
     .catch(e => {

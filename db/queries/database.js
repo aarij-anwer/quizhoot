@@ -106,7 +106,7 @@ const getUserAttempts = function(owner_id) {
 
 const getQuizResults = function(id) {
   return db.query(
-    `SELECT quizzes.id AS quizID, quizzes.title, quizzes.description, quizzes.total_questions, quiz_attempts.id as attemptID, quiz_attempts.total_score
+    `SELECT quizzes.id AS quiz_id, quizzes.title, quizzes.description, quizzes.total_questions, quiz_attempts.id as attempt_id, quiz_attempts.total_score
     FROM quizzes
     JOIN quiz_attempts ON quizzes.id = quiz_attempts.quiz_id
     WHERE quizzes.id = $1
