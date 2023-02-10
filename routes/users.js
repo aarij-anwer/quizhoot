@@ -24,18 +24,12 @@ router.get('/logout', (req, res) => {
 //login routes
 router.get('/login', (req, res) => {
   const userID = req.cookies.user_id;
-  const name = req.cookies.name;
-
-  const templateVars = {
-    userID,
-    name
-  };
 
   if (userID) {
     //user logged in
     res.redirect('/quizzes/home');
   } else {
-    res.render('login', templateVars);
+    res.render('login');
   }
 });
 
@@ -69,18 +63,12 @@ router.post('/login', (req, res) => {
 //user registration routes
 router.get('/new', (req, res) => {
   const userID = req.cookies.user_id;
-  const name = req.cookies.name;
-
-  const templateVars = {
-    userID,
-    name
-  };
 
   if (userID) {
     //user logged in
     res.redirect('/quizzes/home');
   } else {
-    res.render('register', templateVars);
+    res.render('register');
   }
 });
 
@@ -111,7 +99,6 @@ router.post('/', (req, res) => {
             if (!addedUser) {
               return res.status(400).send(`<p>Something went wrong with the DB`);
             }
-            console.log(addedUser);
             res.cookie('name', addedUser.name);
             res.cookie('user_id', addedUser.id);
             res.redirect('/quizzes/home');

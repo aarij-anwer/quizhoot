@@ -9,7 +9,7 @@
 
   <!-- Fonts -->
   <script src="https://kit.fontawesome.com/2bfd122b18.js" crossorigin="anonymous"></script>
-  <style> @import url('https://fonts.googleapis.com/css2?family=Pacifico&display=swap');</style>
+  <style>@import url('https://fonts.googleapis.com/css2?family=Shrikhand&display=swap');</style>
 
   <link rel="stylesheet" href="/vendor/normalize-4.1.1.css" />
   <link rel="stylesheet" href="/vendor/border-box.css" />
@@ -19,9 +19,15 @@
   <link rel="stylesheet" href="/styles/footer.css" />
   <link rel="stylesheet" href="/styles/view-a-quiz.css" />
 
+  <!-- External CSS -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"
+    integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
 
   <script src="/vendor/jquery-3.0.0.js"></script>
   <script defer src="/scripts/app.js"></script>
+  <script defer src="/scripts/attempt-a-quiz.js"></script>
+
   <title>View Quiz</title>
 </head>
 
@@ -29,31 +35,34 @@
   <%- include('partials/_header') %>
 
     <main>
-      <h1><%= quizzes[0].title %></h1>
-      <p><%= quizzes[0].description %></p>
-
+      <div class="quiz-header">
+        <h1 class="quiz-title"><%= quizzes[0].title %></h1>
+        <p class="quiz-description"><%= quizzes[0].description %></p>
+        <br>
+        <Button variant="contained" class="primary-button" size="large" onClick="navigator.clipboard.writeText(window.location.href);this.insertAdjacentHTML('afterend', '<div class=linktooltips-container>Link Copied!</div>');setTimeout(() => { document.querySelectorAll('.linktooltips-container').forEach(el => el.remove()); }, 3000);"> Share quiz with your friends! </Button>
+        <br>
+      </div>
 
       <% for (let quiz of quizzes) { %>
-
-
+        <form action ="/quizzes/quiz_attempts?quiz_id=<%= quizzes[0].quizid %>" method="POST" id="attempt-quiz-form">
           <Ul class="quiz">
             <Li>
-              <H4 class="quiz-question">
+              <h2 class="quiz-question">
                 <%= quiz.question_text %>
-              </H4>
+              </h2>
+
               <Ul class="choices">
                 <Li>
-                  <Label><Input Type="Radio" Name="<%= quiz.id %>" Value="option_1" /><Span>
-                      <%= quiz.option_1 %>
-                    </Span></Label>
+                  <input type="Radio" id="option1" name="<%= quiz.id %>" value="<%= quiz.option_1 === quiz.correct_answer %>" />
+                  <label for="option1"><%= quiz.option_1 %></label>
                 </Li>
                 <Li>
-                  <Label><Input Type="Radio" Name="<%= quiz.id %>" Value="option_2" /><Span>
+                  <Label><Input type="Radio" name="<%= quiz.id %>" value="<%= quiz.option_2 === quiz.correct_answer %>" /><Span>
                       <%= quiz.option_2 %>
                     </Span></Label>
                 </Li>
                 <Li>
-                  <Label><Input Type="Radio" Name="<%= quiz.id %>" Value="option_3" /><Span>
+                  <Label><Input type="Radio" name="<%= quiz.id %>" value="<%= quiz.option_3 === quiz.correct_answer %>" /><Span>
                       <%= quiz.option_3 %>
                     </Span></Label>
                 </Li>
@@ -61,9 +70,10 @@
             </Li>
           </Ul>
           <% } %>
-
-            <Button Class="view-results" Onclick="ReturnScore()">Submit</Button>
-            <br><br>
+           <br>
+           <Button class="primary-button" type="submit">Submit your answers</Button>
+           <br><br>
+          </form>
     </main>
     <%- include('partials/_footer') %>
 </body>

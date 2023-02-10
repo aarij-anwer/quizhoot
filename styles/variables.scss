@@ -21,18 +21,16 @@ $questionTextFontSize: 16px;
 $questionTitleFontSize: 40px;
 $descriptionFontSize: 17px;
 
-//h styling
+//Header styling
 h1 {
-  color: $white;
-  font-size: $questionTitleFontSize;
+  color: $black;
+  font-size: 48px;
   font-weight: 600;
-  text-transform: uppercase;
-
 }
 
 .title {
-  font-family: 'Pacifico', cursive;
-  font-size: 48px;
+  font-family: 'Shrikhand', cursive;
+  font-size: 36px;
   margin-bottom: 20px;
 }
 
@@ -108,6 +106,7 @@ p {
 .right-button {
   display: flex;
   align-self: flex-end;
+
 }
 
 //Form styling

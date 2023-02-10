@@ -1,13 +1,12 @@
 h1 {
-  color: #fff;
-  font-size: 40px;
+  color: #000;
+  font-size: 48px;
   font-weight: 600;
-  text-transform: uppercase;
 }
 
 .title {
-  font-family: "Pacifico", cursive;
-  font-size: 48px;
+  font-family: "Shrikhand", cursive;
+  font-size: 36px;
   margin-bottom: 20px;
 }
 
@@ -99,7 +98,8 @@ p {
 }
 
 .form-label {
-  font-size: 17px;
+  font-size: 16px;
+  font-weight: 600;
   margin-bottom: 8px;
 }
 
@@ -109,6 +109,17 @@ p {
   border-radius: 4px;
   border-width: 1px;
   margin-bottom: 20px;
+}
+
+.input-area {
+  padding: 15px;
+  border-radius: 4px;
+  border-width: 1px;
+}
+
+.question-title {
+  font-size: 22px;
+  font-weight: 600;
 }
 
 .card-quiz {
@@ -135,6 +146,11 @@ p {
   width: 150px;
   height: 150px;
   margin-right: 30px;
+}
+
+.quiz-img {
+  width: 200px;
+  height: 200px;
 }
 
 .profile-layout {
@@ -216,4 +232,21 @@ p {
 .big-number {
   font-size: 50px;
   font-weight: 800;
+}
+
+.no-quiz-container {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.cta {
+  margin-left: 20px;
+  margin-right: 20px;
+}
+
+.no-quiz-img {
+  height: 400px;
+  width: 400px;
+  margin: 20px;
 }/*# sourceMappingURL=user-profile.css.map */

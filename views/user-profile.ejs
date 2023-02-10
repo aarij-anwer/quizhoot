@@ -10,7 +10,7 @@
 
   <!-- Fonts -->
   <script src="https://kit.fontawesome.com/2bfd122b18.js" crossorigin="anonymous"></script>
-  <style> @import url('https://fonts.googleapis.com/css2?family=Pacifico&display=swap');</style>
+  <style>@import url('https://fonts.googleapis.com/css2?family=Shrikhand&display=swap');</style>
 
   <link rel="stylesheet" href="/vendor/normalize-4.1.1.css" />
   <link rel="stylesheet" href="/vendor/border-box.css" />
@@ -28,11 +28,23 @@
 <body>
   <%- include('partials/_header') %>
     <main>
-      <h1>My profile</h1>
+      <h1>My Profile</h1>
       <br><br>
       <div class="profile-layout">
         <div class="user-quizzes">
-          <h2 class="title">Private quizzes</h2>
+          <% if (quizzes.length === 0) { %>
+            <div class="no-quiz-container">
+              <img class="no-quiz-img" src="/docs/brainstorm.png" alt="brainstorm image">
+              <div class="cta">
+                <h2>You haven't created any quiz yet!</h2>
+                <br>
+                <button class="primary-button"><a href="/quizzes/new">Go create your first quiz</a></button>
+              </div>
+            </div>
+            <% } %>
+            <%if (quizzes.length > 0) { %>
+              <h2 class="title">Private Quizzes</h2>
+            <% } %>
           <div class="private-quiz-container">
             <% for (let quiz of quizzes) { %>
               <% if (!quiz.public) { %>
@@ -46,7 +58,9 @@
              <% } %>
             <% } %>
           </div>
-          <h2 class="title">Public quizzes</h2>
+          <% if (quizzes.length > 0) { %>
+          <h2 class="title">Public Quizzes</h2>
+          <% } %>
           <div class="public-quiz-container"></div>
            <% for (let quiz of quizzes) { %>
             <% if (quiz.public) { %>
@@ -61,23 +75,25 @@
             <% } %>
         </div>
         <div class="user-profile">
-          <img class="profile-img" src="/docs/Profile-Male.png" alt="profile image">
+          <img class="profile-img" src="/docs/profile_01.png" alt="profile image">
           <h2>Hello <%= name %></h2>
           <br><br>
           <div class="quiz-info">
             <div class="info-container">
               <label class="big-number"><%= attempts.total_attempts %></label>
-              <h3>quizzes attempted</h3>
+              <h3>Quizzes Attempted</h3>
             </div>
             <div class="info-container">
               <label class="big-number"><%= total_quizzes.total_quizzes %> </label>
-              <h3>quizzes created</h3>
+              <h3>Quizzes Created</h3>
             </div>
           </div>
           <br><br>
           <div class="average-score">
             <label class="score"><%= attempts.avg_score %></label>
-            <h3 class="avg">average score</h3>
+            <% if (quizzes.length > 0) { %>
+            <h3 class="avg">Average Score</h3>
+            <% } %>
           </div>
         </div>
       </div>

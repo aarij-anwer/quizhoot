@@ -1,13 +1,24 @@
 @import 'variables';
 
+main {
+  background-image: url("/docs/quiz_bg.png");
+  background-repeat: no-repeat;
+  background-position: 100px 130px;
+}
 
 .quiz {
   display: flex;
   flex-direction: column;
-  padding: 50px 30px;
+  padding: 30px;
   background-color: $white;
   width: 50%;
   border-radius: 4px;
+}
+#attempt-quiz-form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 1500px;
 }
 
 .quiz-question {
@@ -15,18 +26,21 @@
   flex-direction: row;
   align-items: center;
   justify-content: space-between;
-  padding-bottom: 8px;
-  font-weight: 450;
-  font-size: $questionTextFontSize;
+  font-weight: 800;
+  font-size: 22px;
+  line-height: 28px;
 }
 
+ul {
+  padding-left: 0px;
+}
 
 .quiz, .choices {
   list-style-type: none;
 }
 
 .choices li {
-  padding-top: 3px;
+  padding-top: 18px;
   font-size: 15.5px;
 }
 
@@ -56,3 +70,26 @@
   -webkit-user-select: none;
   touch-action: manipulation;
 }
+
+p {
+  font-size: 17px;
+  line-height: 28px;
+  font-weight: 600;
+  text-align: center;
+
+}
+
+.quiz-header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 40%;
+}
+
+.quiz-description {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+
