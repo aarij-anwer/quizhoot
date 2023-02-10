@@ -28,6 +28,11 @@ app.use(
 );
 app.use(express.static('public'));
 app.use(cookieParser());
+app.use((req, res, next) => {
+  res.locals.userID = req.cookies.user_id;
+  res.locals.name = req.cookies.name;
+  next();
+});
 
 
 // Separated Routes for each Resource

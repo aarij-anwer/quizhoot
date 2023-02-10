@@ -2,7 +2,6 @@
 const db = require('../connection');
 
 const createNewQuiz = function(quiz) {
-  console.log(quiz);
   return db
     .query(`INSERT INTO quizzes(owner_id, title, description, public, total_questions) VALUES($1, $2, $3, $4, $5) RETURNING *`,
       [quiz.owner_id, quiz.title, quiz.description,quiz.public, 3])
@@ -12,7 +11,6 @@ const createNewQuiz = function(quiz) {
 };
 
 const addQuestion = function(question) {
-  console.log(question);
   return db
     .query(`INSERT INTO questions(quiz_id, question_text, option_1, option_2, option_3, correct_answer) VALUES($1, $2, $3, $4, $5, $6) RETURNING *`,
       [question.quiz_id, question.question_text, question.option_1, question.option_2, question.option_3, question.correct_answer])
@@ -48,13 +46,11 @@ const getQuizTitle = function(id) {
     FROM quizzes
     WHERE id = $1;`, [id])
     .then((response) => {
-      console.log('query test', response.rows[0]);
       let obj = response.rows[0];
       let title = '';
       for (const key in obj) {
         title = obj[key];
       }
-      // return response.rows[0];
       return title;
     });
 };
@@ -103,18 +99,9 @@ const getUserAttempts = function(owner_id) {
       console.log(err.message);
     });
 };
-// quiz_id INTEGER REFERENCES quizzes(id),
-// user_id INTEGER REFERENCES users(id),
-// started_at TIMESTAMP NOT NULL,
-// finished_at TIMESTAMP NOT NULL,
-// total_score INTEGER NOT NULL
 
 const createQuizAttempt = function(attempt) {
-  // console.log('attempt', attempt);
   let filteredAnswers = attempt.answers.filter(x => x === 'true');
-  // console.log('filteredAnswers', filteredAnswers);
-  // console.log('filteredAnswers.length', filteredAnswers.length);
-
   const date = new Date();
   const startedAt = date.toUTCString();
   return db
