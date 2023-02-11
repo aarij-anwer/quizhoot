@@ -41,6 +41,7 @@ router.post('/quiz_attempts', (req, res) => {
 
   db.createQuizAttempt({answers, user_id : userId, quiz_id : quizId})
     .then(data => {
+      console.log('your quiz attempt', data);
       let attemptID = data.id;
       //redirect or render to results page (update once added)
       res.redirect(`/quizzes/results/${attemptID}`);
