@@ -49,20 +49,22 @@
             <Li>
               <h2 class="quiz-question">
                 <%= quiz.question_text %>
+
               </h2>
 
               <Ul class="choices">
                 <Li>
-                  <input type="Radio" id="option1" name="<%= quiz.id %>" value="<%= quiz.option_1 === quiz.correct_answer %>" />
+                  <input type="Radio" id="option1" name="<%= quiz.id %>" value="<%= 1 == quiz.correct_answer %>" />
+                <%= console.log('quiz-question', quiz); %>
                   <label for="option1"><%= quiz.option_1 %></label>
                 </Li>
                 <Li>
-                  <Label><Input type="Radio" name="<%= quiz.id %>" value="<%= quiz.option_2 === quiz.correct_answer %>" /><Span>
+                  <Label><Input type="Radio" name="<%= quiz.id %>" value="<%= 2 == quiz.correct_answer %>" /><Span>
                       <%= quiz.option_2 %>
                     </Span></Label>
                 </Li>
                 <Li>
-                  <Label><Input type="Radio" name="<%= quiz.id %>" value="<%= quiz.option_3 === quiz.correct_answer %>" /><Span>
+                  <Label><Input type="Radio" name="<%= quiz.id %>" value="<%= 3 == quiz.correct_answer %>" /><Span>
                       <%= quiz.option_3 %>
                     </Span></Label>
                 </Li>
